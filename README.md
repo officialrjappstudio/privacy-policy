@@ -1,2 +1,2 @@
-# privacy-policy-stackrush
-Privacy Policy for Stack Rush Game
+# privacy-policy
+Privacy Policy for RJ App Studio applications
