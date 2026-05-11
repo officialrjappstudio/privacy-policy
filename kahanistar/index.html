@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — KahaniStar: Kids Moral Stories</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #FF6B35;
+    --saffron-light: #FFF0E8;
+    --saffron-mid: #FFBF99;
+    --gold: #F5A623;
+    --cream: #FFFDF8;
+    --cream-mid: #FFF4E6;
+    --brown-deep: #3D1A08;
+    --brown-mid: #6B3A1F;
+    --brown-light: #A0643A;
+    --text-body: #4A2E18;
+    --text-muted: #8A6A52;
+    --green-soft: #E8F5E9;
+    --green-text: #2E7D32;
+    --blue-soft: #E8F1FB;
+    --blue-text: #1A4F8A;
+    --border: rgba(255,107,53,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--text-body);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* Subtle dot pattern background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,107,53,0.06) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Header */
+  .site-header {
+    background: var(--saffron);
+    position: relative;
+    overflow: hidden;
+    padding: 48px 24px 56px;
+    text-align: center;
+  }
+
+  .site-header::after {
+    content: '';
+    position: absolute;
+    bottom: -24px;
+    left: 0; right: 0;
+    height: 48px;
+    background: var(--cream);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+
+  /* Star SVG icon */
+  .header-star {
+    display: inline-block;
+    margin-bottom: 16px;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .header-title {
+    font-family: 'Lora', serif;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .header-subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: rgba(255,255,255,0.82);
+    font-weight: 300;
+    letter-spacing: 0.3px;
+  }
+
+  /* Stars decoration */
+  .star-dec {
+    position: absolute;
+    color: rgba(255,255,255,0.25);
+    font-size: 22px;
+    pointer-events: none;
+  }
+
+  /* Main container */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Info bar */
+  .info-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 48px;
+    padding: 18px 24px;
+    background: var(--saffron-light);
+    border-radius: 16px;
+    border: 1px solid var(--saffron-mid);
+  }
+
+  .info-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--brown-mid);
+  }
+
+  .info-pill span.dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--saffron);
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--cream-mid);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    padding: 28px 32px;
+    margin-bottom: 52px;
+  }
+
+  .toc-title {
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--saffron);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+  }
+
+  .toc ol {
+    padding-left: 20px;
+    columns: 2;
+    column-gap: 24px;
+  }
+
+  @media (max-width: 540px) {
+    .toc ol { columns: 1; }
+  }
+
+  .toc li {
+    margin-bottom: 6px;
+    break-inside: avoid;
+  }
+
+  .toc a {
+    font-size: 14px;
+    color: var(--brown-mid);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .toc a:hover { color: var(--saffron); }
+
+  /* Sections */
+  .section {
+    margin-bottom: 52px;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section:nth-child(1)  { animation-delay: 0.05s; }
+  .section:nth-child(2)  { animation-delay: 0.10s; }
+  .section:nth-child(3)  { animation-delay: 0.15s; }
+  .section:nth-child(4)  { animation-delay: 0.20s; }
+  .section:nth-child(5)  { animation-delay: 0.25s; }
+  .section:nth-child(6)  { animation-delay: 0.30s; }
+  .section:nth-child(7)  { animation-delay: 0.35s; }
+  .section:nth-child(8)  { animation-delay: 0.40s; }
+  .section:nth-child(9)  { animation-delay: 0.45s; }
+  .section:nth-child(10) { animation-delay: 0.50s; }
+  .section:nth-child(11) { animation-delay: 0.55s; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--saffron-light);
+  }
+
+  .section-num {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: var(--saffron);
+    color: #fff;
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--brown-deep);
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 15.5px;
+    color: var(--text-body);
+    margin-bottom: 14px;
+    line-height: 1.85;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  /* Highlight boxes */
+  .box {
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin: 18px 0;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .box-green {
+    background: var(--green-soft);
+    border-left: 4px solid #66BB6A;
+    color: var(--green-text);
+  }
+
+  .box-blue {
+    background: var(--blue-soft);
+    border-left: 4px solid #5C9CE6;
+    color: var(--blue-text);
+  }
+
+  .box-orange {
+    background: var(--saffron-light);
+    border-left: 4px solid var(--saffron);
+    color: var(--brown-mid);
+  }
+
+  .box strong {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Data table */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 14px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .data-table thead tr {
+    background: var(--saffron);
+    color: #fff;
+  }
+
+  .data-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+  }
+
+  .data-table td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-body);
+    vertical-align: top;
+  }
+
+  .data-table tbody tr:nth-child(even) { background: var(--saffron-light); }
+  .data-table tbody tr:last-child td { border-bottom: none; }
+
+  /* Checklist */
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 14px 0;
+  }
+
+  .checklist li {
+    padding: 7px 0 7px 32px;
+    position: relative;
+    font-size: 15px;
+    color: var(--text-body);
+    border-bottom: 1px dashed rgba(255,107,53,0.12);
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+
+  .checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 13px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: #E8F5E9;
+    border: 2px solid #66BB6A;
+  }
+
+  .checklist li::after {
+    content: '✓';
+    position: absolute;
+    left: 3px; top: 9px;
+    font-size: 11px;
+    color: #2E7D32;
+    font-weight: 700;
+  }
+
+  .checklist.cross li::before {
+    background: #FFEBEE;
+    border-color: #EF5350;
+  }
+
+  .checklist.cross li::after {
+    content: '✕';
+    color: #C62828;
+  }
+
+  /* Opt-out steps */
+  .steps {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+    margin: 14px 0;
+  }
+
+  .steps li {
+    counter-increment: step;
+    padding: 10px 0 10px 44px;
+    position: relative;
+    font-size: 15px;
+    color: var(--text-body);
+  }
+
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0; top: 10px;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--saffron);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Lora', serif;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    line-height: 26px;
+  }
+
+  a {
+    color: var(--saffron);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255,107,53,0.3);
+    transition: border-color 0.2s;
+  }
+
+  a:hover { border-color: var(--saffron); }
+
+  /* Contact card */
+  .contact-card {
+    background: var(--saffron);
+    border-radius: 20px;
+    padding: 32px;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .contact-card .contact-title {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .contact-card p {
+    color: rgba(255,255,255,0.88);
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .contact-email {
+    display: inline-block;
+    background: #fff;
+    color: var(--saffron) !important;
+    border: none !important;
+    font-weight: 700 !important;
+    font-size: 15px;
+    padding: 12px 28px;
+    border-radius: 50px;
+    letter-spacing: 0.3px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .contact-email:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+
+  /* Footer */
+  .site-footer {
+    text-align: center;
+    padding: 32px 24px 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .site-footer p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  /* Divider */
+  hr.fancy {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--saffron-mid), transparent);
+    margin: 48px 0;
+  }
+
+  code {
+    background: var(--saffron-light);
+    color: var(--brown-mid);
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 13.5px;
+    font-family: monospace;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .container { padding: 32px 16px 60px; }
+    .toc ol { columns: 1; }
+    .info-bar { padding: 14px 16px; }
+    .contact-card { padding: 24px 16px; }
+    .data-table { font-size: 12.5px; }
+    .data-table th, .data-table td { padding: 10px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <span class="star-dec" style="top:18px;left:8%">★</span>
+  <span class="star-dec" style="top:40px;right:12%">✦</span>
+  <span class="star-dec" style="bottom:40px;left:20%">★</span>
+  <span class="star-dec" style="top:24px;left:45%">✦</span>
+  <span class="star-dec" style="bottom:50px;right:8%">★</span>
+
+  <div class="header-star">
+    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="36" cy="36" r="36" fill="rgba(255,255,255,0.15)"/>
+      <polygon points="36,8 43,28 64,28 47.5,41 54,62 36,50 18,62 24.5,41 8,28 29,28"
+               fill="#FFD700" stroke="#FFA500" stroke-width="1" stroke-opacity="0.5"/>
+    </svg>
+  </div>
+
+  <h1 class="header-title">Privacy Policy</h1>
+  <p class="header-subtitle">KahaniStar: Kids Moral Stories &nbsp;·&nbsp; RJ App Studio</p>
+</header>
+
+<!-- MAIN -->
+<main class="container">
+
+  <!-- Info bar -->
+  <div class="info-bar">
+    <div class="info-pill"><span class="dot"></span> Package: com.rjappstudio.kahanistar</div>
+    <div class="info-pill"><span class="dot"></span> Effective: 1 January 2025</div>
+    <div class="info-pill"><span class="dot"></span> Last updated: 1 January 2025</div>
+    <div class="info-pill"><span class="dot"></span> Contact: officialrjappstudio@gmail.com</div>
+  </div>
+
+  <!-- TOC -->
+  <nav class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#direct">Data we collect directly</a></li>
+      <li><a href="#admob">Third-party services (AdMob)</a></li>
+      <li><a href="#iap">In-app purchases</a></li>
+      <li><a href="#children">Children's privacy (COPPA)</a></li>
+      <li><a href="#storage">Data storage &amp; security</a></li>
+      <li><a href="#analytics">Analytics</a></li>
+      <li><a href="#retention">Data retention</a></li>
+      <li><a href="#rights">Your rights</a></li>
+      <li><a href="#adchoices">Advertising choices</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1. Introduction -->
+  <section class="section" id="intro">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2 class="section-title">Introduction</h2>
+    </div>
+    <p>RJ App Studio ("we", "us", or "our") operates the <strong>KahaniStar: Kids Moral Stories</strong> Android application (the "App"). This Privacy Policy explains what information we collect, how we use it, and the choices you have.</p>
+    <p>KahaniStar is designed for children aged 2–12 and their families. We take children's privacy extremely seriously. This policy complies with:</p>
+    <ul class="checklist">
+      <li>Children's Online Privacy Protection Act (COPPA) — United States</li>
+      <li>General Data Protection Regulation (GDPR) — European Union</li>
+      <li>Information Technology Act, 2000 &amp; Digital Personal Data Protection Act, 2023 — India</li>
+    </ul>
+    <div class="box box-green">
+      <strong>Short version</strong>
+      KahaniStar does not collect any personal information from children or parents. All story progress is stored only on your device and never uploaded anywhere. The only third-party data collection is from Google AdMob, which we use to display ads in the free version.
+    </div>
+  </section>
+
+  <!-- 2. Direct collection -->
+  <section class="section" id="direct">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2 class="section-title">Information we collect directly</h2>
+    </div>
+    <p>We do <strong>not</strong> collect any personally identifiable information (PII) from users of this App.</p>
+    <p>KahaniStar does not require any of the following:</p>
+    <ul class="checklist cross">
+      <li>Account registration, login, or email address</li>
+      <li>Name, phone number, or postal address</li>
+      <li>Precise or approximate GPS location</li>
+      <li>Camera or microphone access</li>
+      <li>Access to contacts, calendar, or photos</li>
+      <li>Any files from your device storage</li>
+    </ul>
+    <div class="box box-orange">
+      <strong>Local storage only</strong>
+      Your story progress, earned badges, selected language, and age group preference are saved locally on your device using Android's secure app storage (Capacitor Preferences). This data never leaves your device and is permanently deleted when you uninstall the App.
+    </div>
+  </section>
+
+  <!-- 3. AdMob -->
+  <section class="section" id="admob">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2 class="section-title">Information collected by third-party services</h2>
+    </div>
+    <p>We use <strong>Google AdMob</strong> to display advertisements in the free version of the App. AdMob is operated by Google LLC. AdMob may automatically collect the following information from your device:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data type</th>
+          <th>Purpose</th>
+          <th>Shared with</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Device identifiers<br><small style="color:#888">(Android Advertising ID)</small></td>
+          <td>Ad personalisation &amp; frequency capping</td>
+          <td>Google LLC (AdMob)</td>
+        </tr>
+        <tr>
+          <td>App interactions</td>
+          <td>Analytics &amp; ad performance</td>
+          <td>Google LLC (AdMob)</td>
+        </tr>
+        <tr>
+          <td>Approximate location<br><small style="color:#888">(IP-inferred, country level only)</small></td>
+          <td>Regional ad targeting</td>
+          <td>Google LLC (AdMob)</td>
+        </tr>
+        <tr>
+          <td>Diagnostic / crash data</td>
+          <td>App stability &amp; bug fixing</td>
+          <td>Google LLC (AdMob)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box box-blue">
+      <strong>Tiny Tales (ages 2–4) — extra protection</strong>
+      For users who select the "Tiny Tales" age group (ages 2–4), we configure AdMob with child-directed treatment settings. This means only non-personalised ads are shown, and no interest-based targeting is applied. Interstitial ads are completely disabled for this age group.
+    </div>
+
+    <p>For full information on how Google uses data collected through AdMob, please visit: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+  </section>
+
+  <!-- 4. IAP -->
+  <section class="section" id="iap">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2 class="section-title">In-app purchases</h2>
+    </div>
+    <p>KahaniStar offers optional in-app purchases (story packs and premium access) processed through <strong>Google Play Billing</strong>. All payment information is handled entirely by Google Play — we do not receive, store, or process any payment card information.</p>
+    <p>Purchase records can be found in your Google account's purchase history. For refund queries, please contact Google Play support directly.</p>
+  </section>
+
+  <!-- 5. Children -->
+  <section class="section" id="children">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2 class="section-title">Children's privacy (COPPA compliance)</h2>
+    </div>
+    <p>KahaniStar is designed for children under 13. We take the following steps to protect children's privacy in compliance with COPPA:</p>
+    <ul class="checklist">
+      <li>We do not knowingly collect personal information from children</li>
+      <li>Children cannot create accounts or user profiles in the App</li>
+      <li>There are no social features, chat functions, or user-generated content</li>
+      <li>Child usage data is not linked to any personally identifiable information</li>
+      <li>AdMob is configured with <code>TAG_FOR_CHILD_DIRECTED_TREATMENT = true</code> which restricts data collection per COPPA requirements</li>
+      <li>No behavioural profiling of children is performed by us</li>
+    </ul>
+    <div class="box box-orange">
+      <strong>Parent or guardian notice</strong>
+      If you believe we have inadvertently collected any personal information from a child, please contact us immediately at <a href="mailto:officialrjappstudio@gmail.com">officialrjappstudio@gmail.com</a>. We will delete such information within 48 hours.
+    </div>
+  </section>
+
+  <!-- 6. Storage -->
+  <section class="section" id="storage">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h2 class="section-title">Data storage &amp; security</h2>
+    </div>
+    <p>All App data (story progress, earned badges, language preference, age group) is stored locally on your device using Android's secure application storage (Capacitor Preferences API).</p>
+    <ul class="checklist">
+      <li>No data is transmitted to RJ App Studio servers</li>
+      <li>No cloud backup of user data is performed by us</li>
+      <li>All locally stored data is permanently deleted when you uninstall the App</li>
+      <li>We follow industry-standard secure coding practices in our application</li>
+      <li>All third-party API communication (AdMob) uses HTTPS encryption in transit</li>
+    </ul>
+  </section>
+
+  <!-- 7. Analytics -->
+  <section class="section" id="analytics">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <h2 class="section-title">Analytics</h2>
+    </div>
+    <p>We do not use any analytics SDK or platform. We do not use Firebase Analytics, Crashlytics, Mixpanel, or any similar service.</p>
+    <p>The only diagnostic data collected is through AdMob's built-in crash reporting, which is described in Section 3 above and is governed by Google's privacy policy.</p>
+  </section>
+
+  <!-- 8. Retention -->
+  <section class="section" id="retention">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <h2 class="section-title">Data retention</h2>
+    </div>
+    <table class="data-table">
+      <thead>
+        <tr><th>Data</th><th>Where stored</th><th>Retention</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Story progress &amp; badges</td>
+          <td>Device only (local)</td>
+          <td>Until app is uninstalled</td>
+        </tr>
+        <tr>
+          <td>Language &amp; age preference</td>
+          <td>Device only (local)</td>
+          <td>Until app is uninstalled</td>
+        </tr>
+        <tr>
+          <td>AdMob diagnostic data</td>
+          <td>Google LLC servers</td>
+          <td>Per Google's retention policy</td>
+        </tr>
+        <tr>
+          <td>Purchase records</td>
+          <td>Google Play (not us)</td>
+          <td>Per Google's retention policy</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Since we maintain no user databases or servers, there is no RJ App Studio server-side data to request deletion of.</p>
+  </section>
+
+  <!-- 9. Rights -->
+  <section class="section" id="rights">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <h2 class="section-title">Your rights</h2>
+    </div>
+
+    <div class="box box-blue" style="margin-bottom:16px">
+      <strong>GDPR — EU / EEA users</strong>
+      Right to know · Right to erasure · Right to object to processing · Right to lodge a complaint with your local data protection authority. Contact us at <a href="mailto:officialrjappstudio@gmail.com">officialrjappstudio@gmail.com</a> to exercise any of these rights.
+    </div>
+
+    <div class="box box-orange" style="margin-bottom:16px">
+      <strong>COPPA — US users (children under 13)</strong>
+      Parents have the right to review, correct, or delete any information we may hold about their child. Contact us at <a href="mailto:officialrjappstudio@gmail.com">officialrjappstudio@gmail.com</a>. We will respond within 48 hours.
+    </div>
+
+    <div class="box box-green">
+      <strong>India — DPDP Act 2023</strong>
+      Right to access, correct, and erasure of personal data. Contact us at <a href="mailto:officialrjappstudio@gmail.com">officialrjappstudio@gmail.com</a>. We will respond within 7 business days.
+    </div>
+
+    <p style="margin-top:16px">Since KahaniStar collects no personal data directly from users, most rights are automatically fulfilled. For AdMob-related data, please refer to Google's privacy controls and tools.</p>
+  </section>
+
+  <!-- 10. Ad choices -->
+  <section class="section" id="adchoices">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <h2 class="section-title">Advertising choices</h2>
+    </div>
+    <p>You can opt out of personalised advertising on your Android device:</p>
+
+    <p style="margin-bottom:6px"><strong>Android 12 and above:</strong></p>
+    <ol class="steps">
+      <li>Open device <strong>Settings</strong></li>
+      <li>Go to <strong>Privacy &gt; Ads</strong></li>
+      <li>Tap <strong>Delete Advertising ID</strong></li>
+    </ol>
+
+    <p style="margin-bottom:6px;margin-top:18px"><strong>Android 11 and below:</strong></p>
+    <ol class="steps">
+      <li>Open device <strong>Settings</strong></li>
+      <li>Go to <strong>Google &gt; Ads</strong></li>
+      <li>Enable <strong>Opt out of Ads Personalisation</strong></li>
+    </ol>
+
+    <p style="margin-top:16px">You can also visit <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info/choices</a> to manage interest-based advertising preferences.</p>
+  </section>
+
+  <!-- 11. Changes -->
+  <section class="section" id="changes">
+    <div class="section-header">
+      <div class="section-num">11</div>
+      <h2 class="section-title">Changes to this policy</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time. When we do:</p>
+    <ul class="checklist">
+      <li>The "Last Updated" date at the top of this page will be revised</li>
+      <li>Significant changes will be communicated via an in-app notice on the next launch</li>
+      <li>Continued use of the App after changes take effect constitutes acceptance</li>
+    </ul>
+    <p>We encourage parents and guardians to review this policy periodically to stay informed about how we protect children's privacy.</p>
+  </section>
+
+  <hr class="fancy">
+
+  <!-- 12. Contact -->
+  <section class="section" id="contact">
+    <div class="section-header">
+      <div class="section-num">12</div>
+      <h2 class="section-title">Contact us</h2>
+    </div>
+    <p>If you have any questions, concerns, or requests about this Privacy Policy or your data, please reach out:</p>
+    <div class="contact-card">
+      <div class="contact-title">RJ App Studio</div>
+      <p>Pune, Maharashtra, India<br>
+      We respond to privacy enquiries within <strong style="color:#fff">7 business days</strong></p>
+      <a href="mailto:officialrjappstudio@gmail.com" class="contact-email">
+        officialrjappstudio@gmail.com
+      </a>
+    </div>
+    <p style="margin-top:20px;font-size:14px;color:var(--text-muted)">
+      Website: <a href="https://rjappstudio.in" target="_blank" rel="noopener">rjappstudio.in</a> &nbsp;·&nbsp;
+      Governing law: Laws of India &nbsp;·&nbsp;
+      Jurisdiction: Pune, Maharashtra
+    </p>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>© 2025 RJ App Studio. All rights reserved.</p>
+  <p>KahaniStar: Kids Moral Stories &nbsp;·&nbsp; com.rjappstudio.kahanistar</p>
+  <p style="margin-top:12px">
+    <a href="https://rjappstudio.in" target="_blank" rel="noopener">rjappstudio.in</a>
+    &nbsp;·&nbsp;
+    <a href="https://play.google.com/store/apps/dev?id=8272932312657590253" target="_blank" rel="noopener">Play Store</a>
+  </p>
+</footer>
+
+</body>
+</html>
