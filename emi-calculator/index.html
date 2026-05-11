@@ -1,44 +1,315 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Privacy Policy for EMI Calculator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy – Financial Calculator</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-body { padding: 50px; font-family: Arial, Helvetica, sans-serif; }
-h1 { font-size: 36px; }
-h2 { font-size: 28px; }
-b { margin-top: 10px; line-height:2em; }
+  :root {
+    --primary:       #1A2340;
+    --accent:        #185FA5;
+    --accent-tint:   #E6F1FB;
+    --bg-page:       #F5F6FA;
+    --bg-card:       #FFFFFF;
+    --text-primary:  #1A2340;
+    --text-secondary:#4A5271;
+    --text-hint:     #8B90A8;
+    --border:        #E2E5EF;
+    --success-fill:  #DCF5EB;
+    --success-text:  #0F6E56;
+    --warning-fill:  #FEF3DC;
+    --warning-text:  #854F0B;
+    --info-fill:     #E6F1FB;
+    --info-text:     #185FA5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary:       #4D6FD0;
+      --accent:        #85B7EB;
+      --accent-tint:   #0C2244;
+      --bg-page:       #111827;
+      --bg-card:       #1E2A45;
+      --text-primary:  #E8EBF5;
+      --text-secondary:#9AA3C0;
+      --text-hint:     #5B6480;
+      --border:        #2D3D5C;
+      --success-fill:  #0D3D2A;
+      --success-text:  #5DCAA5;
+      --warning-fill:  #3D2500;
+      --warning-text:  #EF9F27;
+      --info-fill:     #0C2244;
+      --info-text:     #85B7EB;
+    }
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg-page); color: var(--text-primary); line-height: 1.75; font-size: 16px; }
+
+  header { background: var(--primary); padding: 48px 24px 40px; text-align: center; }
+  .app-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 50px; padding: 6px 16px 6px 8px; margin-bottom: 20px; }
+  .app-icon { width: 32px; height: 32px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .app-icon svg { width: 18px; height: 18px; }
+  .app-badge span { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.85); letter-spacing: 0.02em; }
+  header h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 40px); font-weight: 400; color: #ffffff; margin-bottom: 10px; letter-spacing: -0.01em; }
+  header p { font-size: 14px; color: rgba(255,255,255,0.55); }
+
+  .top-banner { max-width: 720px; margin: -20px auto 0; padding: 0 16px; position: relative; z-index: 10; }
+  .top-banner-inner { background: var(--warning-fill); border: 1px solid var(--warning-text); border-radius: 14px; padding: 14px 20px; display: flex; align-items: flex-start; gap: 12px; }
+  .banner-icon { width: 32px; height: 32px; flex-shrink: 0; background: var(--warning-text); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .banner-icon svg { width: 16px; height: 16px; }
+  .top-banner-inner p { font-size: 14px; font-weight: 500; color: var(--warning-text); line-height: 1.5; }
+  .top-banner-inner p span { font-weight: 400; opacity: 0.85; }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 40px 16px 80px; }
+
+  .toc { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 24px; margin-bottom: 36px; }
+  .toc-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em; color: var(--text-hint); margin-bottom: 14px; }
+  .toc ol { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; padding: 0; counter-reset: toc; }
+  .toc ol li { counter-increment: toc; }
+  .toc ol li a { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--accent); text-decoration: none; padding: 4px 0; transition: opacity .15s; }
+  .toc ol li a::before { content: counter(toc, decimal-leading-zero); font-size: 11px; font-weight: 600; color: var(--text-hint); min-width: 22px; }
+  .toc ol li a:hover { opacity: 0.7; }
+  @media (max-width: 480px) { .toc ol { grid-template-columns: 1fr; } }
+
+  .section { margin-bottom: 40px; scroll-margin-top: 24px; }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .section-num { width: 28px; height: 28px; flex-shrink: 0; background: var(--accent-tint); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 0.02em; }
+  h2 { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; color: var(--text-primary); letter-spacing: -0.01em; }
+  p { font-size: 15px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.75; }
+  p:last-child { margin-bottom: 0; }
+  ul { padding-left: 0; list-style: none; margin-bottom: 12px; }
+  ul li { font-size: 15px; color: var(--text-secondary); padding: 5px 0 5px 22px; position: relative; line-height: 1.65; }
+  ul li::before { content: ''; position: absolute; left: 6px; top: 13px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: 0.6; }
+  strong { color: var(--text-primary); font-weight: 600; }
+  a { color: var(--accent); }
+
+  .card-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin-top: 12px; }
+  .card-block p { margin: 0; font-size: 14px; }
+  .card-block ul { margin: 10px 0 0; }
+  .card-block ul li { font-size: 14px; }
+
+  .info-block { background: var(--info-fill); border-left: 3px solid var(--info-text); border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 14px 0; }
+  .info-block p { font-size: 14px; color: var(--info-text); margin: 0; }
+
+  .ad-format-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+  @media (max-width: 480px) { .ad-format-grid { grid-template-columns: 1fr; } }
+  .ad-format-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .ad-format-card .label { font-size: 11px; font-weight: 600; color: var(--text-hint); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 4px; }
+  .ad-format-card .name { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+  .ad-format-card .desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-tint); color: var(--accent); font-size: 13px; font-weight: 500; padding: 5px 12px; border-radius: 20px; }
+  .pill svg { width: 13px; height: 13px; flex-shrink: 0; }
+  .pill a { color: var(--accent); text-decoration: none; }
+
+  .contact-card { background: var(--primary); border-radius: 14px; padding: 24px; display: flex; align-items: flex-start; gap: 16px; }
+  .contact-icon { width: 40px; height: 40px; flex-shrink: 0; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+  .contact-icon svg { width: 20px; height: 20px; }
+  .contact-card h3 { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .contact-card p { font-size: 13px; color: rgba(255,255,255,0.6); margin: 0; }
+  .contact-card a { color: #85B7EB; text-decoration: none; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+  footer { text-align: center; padding: 0 16px 40px; }
+  footer p { font-size: 13px; color: var(--text-hint); margin: 0; }
+  .footer-logo { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .footer-logo .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
+  .footer-logo span { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
 </style>
 </head>
-
 <body>
-<h1>Privacy Policy for EMI Calculator</h1>
-<p>This policy is effective as of 05-December-2023</p>
 
-<p>RJ App Studio built the EMI Calculator India app as a Free app. This SERVICE is provided by RJ App Studio at no cost and is intended for use as is.
-This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.
-If you choose to use our Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that we collect is used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.
-The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which are accessible at EMI Calculator unless otherwise defined in this Privacy Policy.</p>
+<header>
+  <div class="app-badge">
+    <div class="app-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+      </svg>
+    </div>
+    <span>Financial Calculator</span>
+  </div>
+  <h1>Privacy Policy</h1>
+  <p>Last updated: March 2026 &nbsp;·&nbsp; Effective immediately</p>
+</header>
 
-<h2>Information We Collect</h2>
-<b>1. Personal Information:</b> <br />
-We don't collect or store any personal details of our users. <br />
-The app does use third-party services that may collect information used to identify you. <br />
-Link to the privacy policy of third-party service providers used by the app <br />
-1.	<a href="https://policies.google.com/privacy" target="_blank">Google Play Services</a> <br />
-2.	<a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">Google AdMob</a><br />
-3.	<a href="https://www.google.com/analytics/terms/" target="_blank">Google Analytics</a> <br />
+<div class="top-banner">
+  <div class="top-banner-inner">
+    <div class="banner-icon">
+      <svg viewBox="0 0 16 16" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="8" cy="8" r="6"/><line x1="8" y1="5" x2="8" y2="8"/><line x1="8" y1="11" x2="8.01" y2="11"/>
+      </svg>
+    </div>
+    <p>This app is <strong>free and supported by ads</strong> via Google AdMob. <span>AdMob may collect device identifiers to serve relevant ads. The financial values you enter are never shared with any advertiser.</span></p>
+  </div>
+</div>
 
-<b>2. Device Information:</b> <br />We may collect information about your mobile device, including the device type, operating system, and unique device identifiers. <br />
-<b>3. Usage Information:</b> <br />We collect information about how you interact with our app, such as the features you use, the pages you visit, and the actions you take.
+<div class="container">
 
-<h2>Changes to This Privacy Policy</h2>
-We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date.
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#data-collected">Information collected</a></li>
+      <li><a href="#admob">Google AdMob &amp; ads</a></li>
+      <li><a href="#your-inputs">Your financial inputs</a></li>
+      <li><a href="#permissions">App permissions</a></li>
+      <li><a href="#children">Children's privacy</a></li>
+      <li><a href="#your-rights">Your rights</a></li>
+      <li><a href="#changes">Policy changes</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </div>
 
-<h2>Contact Us</h2>
-If you have any questions or concerns about this Privacy Policy, please contact us at <a href="mailto:officialrjappstudio@gmail.com">officialrjappstudio@gmail.com.</a>
-<br /><br />
-Thank you for using EMI Calculator!
+  <div class="section" id="overview">
+    <div class="section-header"><div class="section-num">01</div><h2>Overview</h2></div>
+    <p>RJ App Studio ("we", "our", "us") built Financial Calculator as a free utility app. This page explains what information is handled when you use the app and who handles it.</p>
+    <p>The app is free and supported by advertising through Google AdMob. AdMob's SDK collects certain device and usage information to serve ads. All financial values you enter are processed entirely on your device and are never collected or transmitted by us or any advertiser.</p>
+  </div>
+
+  <div class="section" id="data-collected">
+    <div class="section-header"><div class="section-num">02</div><h2>Information collected</h2></div>
+    <p>There are two distinct data flows in this app:</p>
+    <div class="card-block" style="margin-bottom:10px">
+      <p><strong>Data collected by RJ App Studio — None.</strong> We have no servers, no analytics, and no database. We do not receive any information from your device.</p>
+    </div>
+    <div class="card-block">
+      <p><strong>Data collected by Google AdMob (third party).</strong> As part of displaying advertisements, AdMob may automatically collect:</p>
+      <ul>
+        <li>Advertising ID (Google Advertising ID / GAID)</li>
+        <li>Device type, model, and Android OS version</li>
+        <li>IP address (used to infer general location for ad targeting)</li>
+        <li>Ad interaction events (impressions, clicks)</li>
+        <li>App language and locale settings</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section" id="admob">
+    <div class="section-header"><div class="section-num">03</div><h2>Google AdMob &amp; advertising</h2></div>
+    <p>Ads are served by <strong>Google AdMob</strong>. The following ad formats appear in the app:</p>
+    <div class="ad-format-grid">
+      <div class="ad-format-card">
+        <div class="label">Format 1</div>
+        <div class="name">Banner ads</div>
+        <div class="desc">Small static banners at the bottom of calculator screens. Visible while you use a calculator.</div>
+      </div>
+      <div class="ad-format-card">
+        <div class="label">Format 2</div>
+        <div class="name">Interstitial ads</div>
+        <div class="desc">Full-screen ads shown at natural transition points between screens. Always dismissible.</div>
+      </div>
+    </div>
+    <p>AdMob may use the collected data to show personalised or contextual ads. Google's handling of this data is governed by its own privacy policy:</p>
+    <div class="pill-row">
+      <span class="pill">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 2a6 6 0 1 0 0 12A6 6 0 0 0 8 2z"/><line x1="8" y1="6" x2="8" y2="8"/><line x1="8" y1="10" x2="8.01" y2="10"/></svg>
+        <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>
+      </span>
+      <span class="pill">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 8h6M8 5v6"/></svg>
+        <a href="https://support.google.com/admob/answer/6128543" target="_blank">AdMob data practices</a>
+      </span>
+    </div>
+    <div class="info-block">
+      <p><strong>To opt out of personalised ads on Android:</strong> Go to Settings → Google → Ads → Delete advertising ID (Android 12+), or toggle "Opt out of Ads Personalisation" on Android 11 and below. You will still see ads but they will not be targeted based on your interests.</p>
+    </div>
+  </div>
+
+  <div class="section" id="your-inputs">
+    <div class="section-header"><div class="section-num">04</div><h2>Your financial inputs</h2></div>
+    <p>Every value you enter — loan amounts, income, interest rates, investment figures, or any other number — is processed <strong>entirely on your device</strong> using local arithmetic. This data is:</p>
+    <ul>
+      <li>Never sent to our servers (we operate none)</li>
+      <li>Never accessible to Google AdMob or any advertiser</li>
+      <li>Never written to persistent storage on your device</li>
+      <li>Discarded automatically when you navigate away or close the app</li>
+    </ul>
+    <p>Your financial data is completely private. The ad network has no visibility into what you calculate.</p>
+  </div>
+
+  <div class="section" id="permissions">
+    <div class="section-header"><div class="section-num">05</div><h2>App permissions</h2></div>
+    <p>Financial Calculator requests only the permissions necessary to display ads. No sensitive device resources are accessed.</p>
+    <div class="card-block">
+      <table style="width:100%;border-collapse:collapse;font-size:14px">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:8px 0;font-weight:600;color:var(--text-primary);width:42%">Permission</td>
+            <td style="padding:8px 0;font-weight:600;color:var(--text-primary)">Purpose</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px 0;color:var(--text-secondary);font-family:monospace;font-size:13px">INTERNET</td>
+            <td style="padding:10px 0;color:var(--text-secondary)">Required by Google AdMob to fetch and display ads.</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px 0;color:var(--text-secondary);font-family:monospace;font-size:13px">ACCESS_NETWORK_STATE</td>
+            <td style="padding:10px 0;color:var(--text-secondary)">Allows AdMob to check connectivity before loading an ad.</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 0;color:var(--text-secondary)">No other permissions</td>
+            <td style="padding:10px 0;color:var(--text-secondary)">Camera, microphone, contacts, location, and file storage are not requested.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section" id="children">
+    <div class="section-header"><div class="section-num">06</div><h2>Children's privacy</h2></div>
+    <p>Financial Calculator is a general-purpose utility intended for users aged 13 and above. It is not directed at children under 13.</p>
+    <p>We do not knowingly collect personal information from children. Google AdMob is configured to serve general-audience ads in this app, not interest-based ads targeted at children.</p>
+    <p>If you are a parent or guardian and believe your child under 13 is using this app, please contact us and we will ensure appropriate measures are taken in line with COPPA and applicable Indian laws.</p>
+  </div>
+
+  <div class="section" id="your-rights">
+    <div class="section-header"><div class="section-num">07</div><h2>Your rights</h2></div>
+    <p>You have the following controls over ad-related data:</p>
+    <ul>
+      <li><strong>Opt out of personalised ads</strong> — via Android device Settings as described in Section 03</li>
+      <li><strong>Reset your Advertising ID</strong> — breaks any previously built ad interest profile</li>
+      <li><strong>Request Google data deletion</strong> — visit <a href="https://myaccount.google.com/data-and-privacy" target="_blank">myaccount.google.com/data-and-privacy</a> for data held by AdMob</li>
+      <li><strong>Contact us directly</strong> — we hold no personal data but will assist with any questions or requests</li>
+    </ul>
+  </div>
+
+  <div class="section" id="changes">
+    <div class="section-header"><div class="section-num">08</div><h2>Policy changes</h2></div>
+    <p>We may update this privacy policy from time to time — for example, if we add a new ad format or change the ad network. When we do, the "Last updated" date at the top of this page will be revised.</p>
+    <p>For significant changes such as adding a new data-collecting SDK, we will provide advance notice via Play Store release notes before the update goes live.</p>
+  </div>
+
+  <div class="section" id="contact">
+    <div class="section-header"><div class="section-num">09</div><h2>Contact us</h2></div>
+    <p>For any questions or concerns about this privacy policy:</p>
+    <div class="contact-card">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+      <div>
+        <h3>RJ App Studio</h3>
+        <p>Email: <a href="mailto:officialrjappstudio@gmail.com">officialrjappstudio@gmail.com</a></p>
+        <p style="margin-top:4px">We aim to respond to all enquiries within 48 hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <div class="dot"></div>
+    <span>Financial Calculator — RJ App Studio</span>
+  </div>
+  <p>Free app supported by Google AdMob advertising. Your financial inputs are never shared.</p>
+</footer>
 
 </body>
 </html>
