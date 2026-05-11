@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Privacy Policy for apps by RJ App Studio. We are committed to protecting your privacy.">
+<title>Privacy Policy – RJ App Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary:        #1A2340;
+    --accent:         #185FA5;
+    --accent-tint:    #E6F1FB;
+    --bg-page:        #F5F6FA;
+    --bg-card:        #FFFFFF;
+    --text-primary:   #1A2340;
+    --text-secondary: #4A5271;
+    --text-hint:      #8B90A8;
+    --border:         #E2E5EF;
+    --success-fill:   #DCF5EB;
+    --success-text:   #0F6E56;
+    --warning-fill:   #FEF3DC;
+    --warning-text:   #854F0B;
+    --danger-fill:    #FDE8E8;
+    --danger-text:    #A32D2D;
+    --info-fill:      #E6F1FB;
+    --info-text:      #185FA5;
+    --radius-md:      10px;
+    --radius-lg:      14px;
+    --radius-xl:      20px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary:        #2A3A6A;
+      --accent:         #85B7EB;
+      --accent-tint:    #0C2244;
+      --bg-page:        #111827;
+      --bg-card:        #1E2A45;
+      --text-primary:   #E8EBF5;
+      --text-secondary: #9AA3C0;
+      --text-hint:      #5B6480;
+      --border:         #2D3D5C;
+      --success-fill:   #0D3D2A;
+      --success-text:   #5DCAA5;
+      --warning-fill:   #3D2500;
+      --warning-text:   #EF9F27;
+      --danger-fill:    #3D1010;
+      --danger-text:    #F09595;
+      --info-fill:      #0C2244;
+      --info-text:      #85B7EB;
+    }
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--primary);
+    padding: 0 20px;
+  }
+  .header-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 0 48px;
+  }
+  .brand-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .brand-icon {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+  .brand-icon svg { width: 20px; height: 20px; }
+  .brand-name {
+    font-size: 14px; font-weight: 600;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.02em;
+  }
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .header-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-top: 14px;
+  }
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+  }
+  .meta-pill svg { width: 14px; height: 14px; opacity: 0.6; }
+
+  /* ── AD NOTICE BANNER ── */
+  .notice-wrap {
+    background: var(--primary);
+    padding: 0 20px;
+  }
+  .notice-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-bottom: 24px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .notice-icon {
+    width: 34px; height: 34px; flex-shrink: 0;
+    background: var(--warning-text);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 2px;
+  }
+  .notice-icon svg { width: 16px; height: 16px; }
+  .notice-text {
+    background: var(--warning-fill);
+    border: 1px solid var(--warning-text);
+    border-radius: var(--radius-lg);
+    padding: 13px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--warning-text);
+    line-height: 1.55;
+    flex: 1;
+  }
+  .notice-text span { font-weight: 400; opacity: 0.85; }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 44px 20px 80px;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px 26px;
+    margin-bottom: 40px;
+  }
+  .toc-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-hint);
+    margin-bottom: 16px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 28px;
+    counter-reset: toc-counter;
+  }
+  .toc-item {
+    counter-increment: toc-counter;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 5px 0;
+  }
+  .toc-item::before {
+    content: counter(toc-counter, decimal-leading-zero);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-hint);
+    min-width: 22px;
+    flex-shrink: 0;
+  }
+  .toc-item a {
+    font-size: 13px;
+    color: var(--accent);
+    text-decoration: none;
+    line-height: 1.4;
+    transition: opacity .15s;
+  }
+  .toc-item a:hover { opacity: 0.65; }
+  @media (max-width: 500px) {
+    .toc-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 44px;
+    scroll-margin-top: 24px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .section-num {
+    width: 30px; height: 30px; flex-shrink: 0;
+    background: var(--accent-tint);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+  }
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+  p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    line-height: 1.75;
+  }
+  p:last-child { margin-bottom: 0; }
+  p strong { color: var(--text-primary); font-weight: 600; }
+  a { color: var(--accent); }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 14px;
+  }
+  ul li {
+    font-size: 15px;
+    color: var(--text-secondary);
+    padding: 5px 0 5px 24px;
+    position: relative;
+    line-height: 1.65;
+  }
+  ul li::before {
+    content: '';
+    position: absolute;
+    left: 7px; top: 14px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.55;
+  }
+  ul li strong { color: var(--text-primary); font-weight: 600; }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 22px;
+    margin: 14px 0;
+  }
+  .card p { font-size: 14px; margin: 0; }
+  .card p + p { margin-top: 8px; }
+  .card ul { margin: 10px 0 0; }
+  .card ul li { font-size: 14px; }
+  .card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title svg { width: 15px; height: 15px; color: var(--accent); flex-shrink: 0; }
+
+  /* ── INFO BLOCK ── */
+  .info-block {
+    background: var(--info-fill);
+    border-left: 3px solid var(--info-text);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+  }
+  .info-block p { font-size: 14px; color: var(--info-text); margin: 0; }
+  .info-block p + p { margin-top: 6px; }
+
+  /* ── AD FORMAT GRID ── */
+  .ad-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  @media (max-width: 500px) { .ad-grid { grid-template-columns: 1fr; } }
+  .ad-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+  }
+  .ad-card .ad-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-hint);
+    margin-bottom: 5px;
+  }
+  .ad-card .ad-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+  .ad-card .ad-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  /* ── PERMISSION TABLE ── */
+  .perm-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 14px 0;
+  }
+  .perm-table thead tr {
+    background: var(--accent-tint);
+  }
+  .perm-table th {
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 1px solid var(--border);
+  }
+  .perm-table td {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    vertical-align: top;
+  }
+  .perm-table tr:nth-child(even) td { background: var(--bg-page); }
+  .perm-table code {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    background: var(--bg-page);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+  }
+
+  /* ── DATA TABLE ── */
+  .data-table-wrap { overflow-x: auto; margin: 14px 0; }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 500px;
+  }
+  .data-table thead tr { background: var(--primary); }
+  .data-table th {
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    color: #fff;
+    font-size: 12px;
+    border: 1px solid var(--border);
+  }
+  .data-table td {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    vertical-align: top;
+  }
+  .data-table tr:nth-child(even) td { background: var(--bg-page); }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .badge-no  { background: var(--success-fill); color: var(--success-text); }
+  .badge-yes { background: var(--warning-fill); color: var(--warning-text); }
+
+  /* ── PILLS ── */
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-tint);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+  }
+  .pill svg { width: 13px; height: 13px; }
+
+  /* ── CONTACT CARD ── */
+  .contact-card {
+    background: var(--primary);
+    border-radius: var(--radius-xl);
+    padding: 26px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .contact-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .contact-icon svg { width: 22px; height: 22px; }
+  .contact-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .contact-card p { font-size: 14px; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.6; }
+  .contact-card a { color: #85B7EB; text-decoration: none; }
+  .contact-card a:hover { text-decoration: underline; }
+
+  /* ── DIVIDER ── */
+  hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+  /* ── COMPLIANCE BADGES ── */
+  .compliance-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0 0;
+  }
+  .comp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--success-fill);
+    color: var(--success-text);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--success-text);
+  }
+  .comp-badge svg { width: 12px; height: 12px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--primary);
+    padding: 32px 20px;
+    text-align: center;
+  }
+  .footer-inner { max-width: 760px; margin: 0 auto; }
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .footer-dot {
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .footer-brand span {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+  }
+  footer p { font-size: 13px; color: rgba(255,255,255,0.4); }
+  footer a { color: rgba(255,255,255,0.6); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="brand-row">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+      </div>
+      <span class="brand-name">RJ App Studio</span>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p style="color:rgba(255,255,255,0.55);font-size:15px;margin:8px 0 0">This policy applies to all apps published by RJ App Studio on the Google Play Store.</p>
+    <div class="header-meta">
+      <span class="meta-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Last updated: March 21, 2026
+      </span>
+      <span class="meta-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        rjappstudio.in
+      </span>
+      <span class="meta-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91A16 16 0 0 0 13 15.09l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+        Effective immediately
+      </span>
+    </div>
+  </div>
+</header>
+
+<!-- AD NOTICE -->
+<div class="notice-wrap">
+  <div class="notice-inner">
+    <div class="notice-icon">
+      <svg viewBox="0 0 16 16" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="8" cy="8" r="6"/><line x1="8" y1="5" x2="8" y2="8"/><line x1="8" y1="11" x2="8.01" y2="11"/>
+      </svg>
+    </div>
+    <div class="notice-text">
+      Our apps are <strong>free and supported by Google AdMob advertising.</strong>
+      <span> AdMob may collect device identifiers to serve relevant ads. Financial inputs and calculation data you enter are never collected, stored, or shared with any third party.</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-label">Contents</div>
+    <div class="toc-grid">
+      <div class="toc-item"><a href="#s1">Overview &amp; scope</a></div>
+      <div class="toc-item"><a href="#s2">Information we collect</a></div>
+      <div class="toc-item"><a href="#s3">Google AdMob &amp; advertising</a></div>
+      <div class="toc-item"><a href="#s4">How your data is used</a></div>
+      <div class="toc-item"><a href="#s5">Data sharing &amp; disclosure</a></div>
+      <div class="toc-item"><a href="#s6">App permissions</a></div>
+      <div class="toc-item"><a href="#s7">Data retention &amp; deletion</a></div>
+      <div class="toc-item"><a href="#s8">Children's privacy (COPPA)</a></div>
+      <div class="toc-item"><a href="#s9">Your rights &amp; opt-out</a></div>
+      <div class="toc-item"><a href="#s10">Security</a></div>
+      <div class="toc-item"><a href="#s11">Policy changes</a></div>
+      <div class="toc-item"><a href="#s12">Contact us</a></div>
+    </div>
+    <div class="compliance-row">
+      <span class="comp-badge">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8 6.5 11.5 13 4.5"/></svg>
+        Google Play compliant
+      </span>
+      <span class="comp-badge">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8 6.5 11.5 13 4.5"/></svg>
+        COPPA addressed
+      </span>
+      <span class="comp-badge">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8 6.5 11.5 13 4.5"/></svg>
+        AdMob disclosed
+      </span>
+      <span class="comp-badge">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8 6.5 11.5 13 4.5"/></svg>
+        IT Act 2000 (India)
+      </span>
+    </div>
+  </div>
+
+  <!-- S1: Overview -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <h2>Overview &amp; scope</h2>
+    </div>
+    <p>RJ App Studio ("we", "our", "us") is an independent app developer based in India. This Privacy Policy describes how we handle information in connection with the mobile applications we publish on Google Play Store, including but not limited to:</p>
+    <ul>
+      <li>Financial Calculator (EMI, SIP, loan, and investment tools)</li>
+      <li>Electricity Bill Calculator (power consumption and tariff tools)</li>
+      <li>Any future apps published under the RJ App Studio developer account</li>
+    </ul>
+    <p>By installing or using any of our apps, you agree to the practices described in this policy. If you do not agree, please uninstall the app and discontinue use.</p>
+    <p>Our apps are utility tools designed to perform local calculations. <strong>We do not operate any servers, databases, or backend infrastructure that receives your data.</strong> The only third-party service integrated into our apps is Google AdMob for advertising, which is disclosed fully in Section 03.</p>
+  </div>
+
+  <!-- S2: Information Collected -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <h2>Information we collect</h2>
+    </div>
+    <p>The table below provides a complete picture of data flows in our apps:</p>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data type</th>
+            <th>Collected by us</th>
+            <th>Collected by AdMob</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Loan / EMI / investment inputs</td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td>Used only for on-device calculation; discarded on exit</td>
+          </tr>
+          <tr>
+            <td>Electricity / power consumption inputs</td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td>On-device calculation only</td>
+          </tr>
+          <tr>
+            <td>Name, email, or personal identity</td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td>Not required; not requested</td>
+          </tr>
+          <tr>
+            <td>Google Advertising ID (GAID)</td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td><span class="badge badge-yes">Yes</span></td>
+            <td>Ad personalisation and frequency capping</td>
+          </tr>
+          <tr>
+            <td>Device model &amp; OS version</td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td><span class="badge badge-yes">Yes</span></td>
+            <td>Ad rendering and compatibility</td>
+          </tr>
+          <tr>
+            <td>IP address</td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td><span class="badge badge-yes">Yes</span></td>
+            <td>General location inference for ad targeting</td>
+          </tr>
+          <tr>
+            <td>App interaction events (ad impressions, clicks)</td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td><span class="badge badge-yes">Yes</span></td>
+            <td>Ad performance measurement</td>
+          </tr>
+          <tr>
+            <td>Device language &amp; locale</td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td><span class="badge badge-yes">Yes</span></td>
+            <td>Ad localisation</td>
+          </tr>
+          <tr>
+            <td>Crash reports / analytics</td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td>No analytics SDK integrated</td>
+          </tr>
+          <tr>
+            <td>Location (GPS)</td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td>Not requested; not used</td>
+          </tr>
+          <tr>
+            <td>Contacts, camera, microphone, files</td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td>Permissions not requested</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-block">
+      <p><strong>Summary:</strong> RJ App Studio collects zero data. All user inputs are processed locally on your device and are never transmitted anywhere. The only data collection that occurs is by Google AdMob as described in Section 03.</p>
+    </div>
+  </div>
+
+  <!-- S3: AdMob -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <h2>Google AdMob &amp; advertising</h2>
+    </div>
+    <p>Our apps are free to use and are supported by advertising through <strong>Google AdMob</strong>, a service provided by Google LLC. AdMob enables us to show ads to users without charging for the app.</p>
+
+    <p>The following ad formats are used across our apps:</p>
+    <div class="ad-grid">
+      <div class="ad-card">
+        <div class="ad-label">Format 1</div>
+        <div class="ad-name">Banner ads</div>
+        <div class="ad-desc">Small rectangular ads displayed at the bottom of screens. Remain visible during use.</div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-label">Format 2</div>
+        <div class="ad-name">Interstitial ads</div>
+        <div class="ad-desc">Full-screen ads shown at natural transition points between screens. Always dismissible by the user.</div>
+      </div>
+    </div>
+
+    <p>To serve these ads, AdMob's SDK automatically collects certain technical data as listed in Section 02. This data is processed by Google in accordance with Google's own privacy policy. We have no access to this data — it goes directly to Google's servers.</p>
+
+    <div class="card">
+      <div class="card-title">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><line x1="8" y1="5" x2="8" y2="8"/><line x1="8" y1="11" x2="8.01" y2="11"/></svg>
+        Google's data practices
+      </div>
+      <p>You can review how Google handles AdMob data at the links below:</p>
+    </div>
+
+    <div class="pill-row">
+      <a class="pill" href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 13H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4"/><path d="M11 10l3-3-3-3"/><line x1="14" y1="7" x2="6" y2="7"/></svg>
+        Google Privacy Policy
+      </a>
+      <a class="pill" href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 13H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4"/><path d="M11 10l3-3-3-3"/><line x1="14" y1="7" x2="6" y2="7"/></svg>
+        AdMob data practices
+      </a>
+      <a class="pill" href="https://adssettings.google.com" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2"/></svg>
+        Manage ad settings
+      </a>
+    </div>
+
+    <div class="info-block">
+      <p><strong>To opt out of personalised ads on Android:</strong></p>
+      <p>Android 12+: Settings → Google → Ads → Delete advertising ID</p>
+      <p>Android 11 and below: Settings → Google → Ads → Opt out of Ads Personalisation</p>
+      <p>After opting out you will still see ads, but they will not be personalised based on your interests.</p>
+    </div>
+  </div>
+
+  <!-- S4: How data is used -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <h2>How your data is used</h2>
+    </div>
+    <p><strong>By RJ App Studio:</strong> We do not collect any data, therefore we do not use any data. All calculations performed in our apps (EMI, SIP, electricity bill, power consumption, solar estimates, etc.) are executed entirely on your device using local code. No result or input is ever sent to us.</p>
+
+    <p><strong>By Google AdMob:</strong> The technical data collected by AdMob (advertising ID, device info, IP address) is used solely for:</p>
+    <ul>
+      <li>Selecting and displaying relevant advertisements</li>
+      <li>Measuring ad performance (impressions and clicks)</li>
+      <li>Fraud prevention and ad quality enforcement</li>
+      <li>Complying with Google's own legal obligations</li>
+    </ul>
+    <p>AdMob does not have access to any financial figures, electricity consumption data, or any other values you enter into our calculators. These remain entirely on your device.</p>
+  </div>
+
+  <!-- S5: Data Sharing -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <h2>Data sharing &amp; disclosure</h2>
+    </div>
+    <p><strong>RJ App Studio does not share, sell, rent, or trade any personal information</strong> with third parties — because we collect none.</p>
+
+    <p>The only third-party data flow is from your device directly to Google AdMob's servers, which operates independently under Google's privacy policy. We are not a party to that data exchange and cannot access or control it beyond choosing to integrate AdMob into our apps.</p>
+
+    <p>We may disclose information in the following exceptional circumstances:</p>
+    <ul>
+      <li><strong>Legal compliance:</strong> If required by applicable Indian law (IT Act 2000, DPDP Act 2023), court order, or lawful government request — though as we hold no personal data, compliance in practice means confirming that we hold nothing</li>
+      <li><strong>Safety:</strong> To protect the rights, property, or safety of RJ App Studio, our users, or the public, to the extent required by law</li>
+      <li><strong>Business transfer:</strong> In connection with any merger, acquisition, or sale of assets, where the new entity would be bound by this policy</li>
+    </ul>
+  </div>
+
+  <!-- S6: Permissions -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <h2>App permissions</h2>
+    </div>
+    <p>Our apps request only the minimum Android permissions necessary to function and display ads. The complete list of permissions and their purpose is shown below:</p>
+
+    <table class="perm-table">
+      <thead>
+        <tr>
+          <th style="width:40%">Permission</th>
+          <th>Why it is needed</th>
+          <th style="width:22%">Who uses it</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>INTERNET</code></td>
+          <td>Required to fetch and display Google AdMob advertisements</td>
+          <td>AdMob only</td>
+        </tr>
+        <tr>
+          <td><code>ACCESS_NETWORK_STATE</code></td>
+          <td>Allows AdMob to check network availability before attempting to load an ad, preventing unnecessary retry loops</td>
+          <td>AdMob only</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="card">
+      <p><strong>Permissions we do NOT request:</strong> camera, microphone, precise or approximate location (GPS), contacts, phone state, read/write external storage, Bluetooth, biometrics, or any other sensitive permission. If any future app update requires an additional permission, this policy will be updated and the change will be explained in Play Store release notes.</p>
+    </div>
+  </div>
+
+  <!-- S7: Data Retention -->
+  <div class="section" id="s7">
+    <div class="section-header">
+      <div class="section-num">07</div>
+      <h2>Data retention &amp; deletion</h2>
+    </div>
+    <p><strong>Data retained by RJ App Studio:</strong> None. We hold no personal data, so there is nothing to delete.</p>
+
+    <p><strong>Data stored locally on your device:</strong> Some apps may store your preferences (such as selected state, default load settings) using the device's local storage (Android SharedPreferences or equivalent). This data never leaves your device. You can clear it at any time by:</p>
+    <ul>
+      <li>Going to <strong>Settings → Apps → [App Name] → Storage → Clear Data</strong> on your Android device</li>
+      <li>Uninstalling the app, which removes all locally stored preferences</li>
+    </ul>
+
+    <p><strong>Data held by Google AdMob:</strong> For requests to delete data held by Google, please visit <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">myaccount.google.com/data-and-privacy</a>. You can also reset your Google Advertising ID at any time from Android device settings, which effectively creates a fresh profile with no history.</p>
+  </div>
+
+  <!-- S8: Children -->
+  <div class="section" id="s8">
+    <div class="section-header">
+      <div class="section-num">08</div>
+      <h2>Children's privacy (COPPA &amp; DPDP)</h2>
+    </div>
+    <p>Our apps are general-purpose utility tools not specifically directed at children under the age of 13 (or under the age of 18 where the Indian Digital Personal Data Protection Act 2023 applies additional protections for minors).</p>
+
+    <p>We do not knowingly collect personal data from children of any age. Because we collect no personal data from any user, children are subject to the same data treatment — which is none — as adult users.</p>
+
+    <p>With respect to advertising: our apps are configured in AdMob as <strong>general-audience apps</strong>, not directed at children. We do not use the "child-directed" treatment setting which would disable personalised ads, as our apps are general-audience financial and utility tools. Parents who prefer that their children not see personalised ads can delete the Advertising ID on the child's device (see Section 09).</p>
+
+    <p>If you are a parent or guardian and believe your child under 13 is using our apps and you have concerns about any data collection, please contact us at <a href="mailto:officialrjappstudio@gmail.com">officialrjappstudio@gmail.com</a>. We will investigate and take appropriate action promptly.</p>
+  </div>
+
+  <!-- S9: Your Rights -->
+  <div class="section" id="s9">
+    <div class="section-header">
+      <div class="section-num">09</div>
+      <h2>Your rights &amp; opt-out controls</h2>
+    </div>
+    <p>Under applicable laws including India's DPDP Act 2023 and general data protection principles, you have the following rights:</p>
+
+    <ul>
+      <li><strong>Right to know:</strong> This policy fully discloses all data practices. RJ App Studio holds no personal data about you.</li>
+      <li><strong>Right to opt out of personalised ads:</strong> See the Android device steps in Section 03. You will continue to see ads but they will not be interest-based.</li>
+      <li><strong>Right to reset your ad profile:</strong> Delete and regenerate your Advertising ID via Android Settings → Google → Ads. This breaks any previously built ad interest history.</li>
+      <li><strong>Right to manage Google's data:</strong> Visit <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">myaccount.google.com/data-and-privacy</a> to manage or delete data held by Google services including AdMob.</li>
+      <li><strong>Right to contact us:</strong> For any privacy concern, email us at <a href="mailto:officialrjappstudio@gmail.com">officialrjappstudio@gmail.com</a>. As we hold no personal data, most requests will be answered with confirmation that no data is held.</li>
+      <li><strong>Right to uninstall:</strong> You may uninstall any of our apps at any time. This removes all locally stored preferences immediately.</li>
+    </ul>
+
+    <div class="pill-row">
+      <a class="pill" href="https://adssettings.google.com" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41"/></svg>
+        Google Ads Settings
+      </a>
+      <a class="pill" href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 1a3 3 0 0 1 3 3v1h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h1V4a3 3 0 0 1 3-3z"/></svg>
+        Google Data &amp; Privacy
+      </a>
+    </div>
+  </div>
+
+  <!-- S10: Security -->
+  <div class="section" id="s10">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <h2>Security</h2>
+    </div>
+    <p>Since RJ App Studio does not collect or store personal data, the primary security consideration is the safety of your locally stored preferences and the integrity of the app itself.</p>
+    <p>We take the following measures to protect users:</p>
+    <ul>
+      <li>Our apps are distributed exclusively through the official Google Play Store, which provides code integrity verification</li>
+      <li>We do not store any financial data, calculation history, or sensitive inputs in persistent device storage</li>
+      <li>We do not transmit any user-entered data over any network</li>
+      <li>We follow secure coding practices and keep dependencies (including AdMob SDK) updated to their latest stable versions</li>
+    </ul>
+    <p>No method of electronic storage or transmission is 100% secure. However, because we hold no personal data, the risk to users from any breach of our systems is negligible — there is nothing of personal value to breach.</p>
+  </div>
+
+  <!-- S11: Changes -->
+  <div class="section" id="s11">
+    <div class="section-header">
+      <div class="section-num">11</div>
+      <h2>Policy changes</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our apps, advertising integrations, or applicable law. When we do:</p>
+    <ul>
+      <li>The "Last updated" date at the top of this page will be revised</li>
+      <li>The updated policy will be published at the same URL: <a href="https://rjappstudio.in/privacy-policy" target="_blank">rjappstudio.in/privacy-policy</a></li>
+      <li>For significant changes — such as the addition of a new third-party SDK that collects data — we will provide prior notice in Play Store release notes</li>
+    </ul>
+    <p>Continued use of any of our apps after a policy update constitutes your acceptance of the revised policy. We encourage you to review this page periodically, particularly after app updates.</p>
+  </div>
+
+  <!-- S12: Contact -->
+  <div class="section" id="s12">
+    <div class="section-header">
+      <div class="section-num">12</div>
+      <h2>Contact us</h2>
+    </div>
+    <p>For any questions, concerns, or requests relating to this Privacy Policy or our data practices, please reach out to us:</p>
+    <div class="contact-card">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+      <div>
+        <h3>RJ App Studio</h3>
+        <p>Email: <a href="mailto:officialrjappstudio@gmail.com">officialrjappstudio@gmail.com</a></p>
+        <p>Website: <a href="https://rjappstudio.in" target="_blank">rjappstudio.in</a></p>
+        <p style="margin-top:8px">We aim to respond to all privacy enquiries within 48 hours. As we hold no personal data, most requests will receive a prompt confirmation response.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Governing law note -->
+  <div class="section" style="margin-bottom: 0">
+    <div class="card">
+      <div class="card-title">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 1l1.5 3h3l-2.5 2 1 3L8 7.5 5 9l1-3L3.5 4h3z"/></svg>
+        Governing law
+      </div>
+      <p>This Privacy Policy is governed by the laws of India, including the Information Technology Act 2000, the Information Technology (Reasonable Security Practices) Rules 2011, and the Digital Personal Data Protection Act 2023. Any disputes shall be subject to the jurisdiction of competent courts in India.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-dot"></div>
+      <span>RJ App Studio</span>
+    </div>
+    <p>
+      <a href="https://rjappstudio.in" target="_blank">rjappstudio.in</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:officialrjappstudio@gmail.com">officialrjappstudio@gmail.com</a>
+    </p>
+    <p style="margin-top:8px">© 2026 RJ App Studio. Free apps, supported by Google AdMob. No personal data collected.</p>
+  </div>
+</footer>
+
+</body>
+</html>
