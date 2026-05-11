@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — CalcMacro</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #1B1F2E;
+      --accent: #FF6B6B;
+      --green:  #6BCB77;
+      --yellow: #FFD93D;
+      --bg:     #F7F8FC;
+      --text:   #1B1F2E;
+      --muted:  #6B7280;
+      --border: #E5E7EB;
+      --white:  #FFFFFF;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    header {
+      background: var(--navy);
+      padding: 40px 24px 36px;
+      text-align: center;
+    }
+
+    .logo-ring {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      color: #9CA3AF;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(107, 203, 119, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(107, 203, 119, 0.3);
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 14px;
+      margin-top: 12px;
+      font-family: 'DM Mono', monospace;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toc {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+
+    .toc h3 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .toc ol {
+      padding-left: 20px;
+    }
+
+    .toc li {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .toc a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .toc a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 14px;
+      padding-left: 14px;
+      border-left: 3px solid var(--accent);
+    }
+
+    p {
+      font-size: 15px;
+      color: #374151;
+      margin-bottom: 14px;
+    }
+
+    ul, ol {
+      padding-left: 22px;
+      margin-bottom: 14px;
+    }
+
+    li {
+      font-size: 15px;
+      color: #374151;
+      margin-bottom: 6px;
+    }
+
+    .highlight-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .highlight-box.green {
+      background: #F0FDF4;
+      border-color: rgba(107, 203, 119, 0.4);
+    }
+
+    .highlight-box.yellow {
+      background: #FFFBEB;
+      border-color: rgba(255, 217, 61, 0.5);
+    }
+
+    .highlight-box p {
+      margin: 0;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .highlight-box strong {
+      color: var(--navy);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #F3F4F6;
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-family: 'DM Mono', monospace;
+      color: var(--navy);
+    }
+
+    .contact-card {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 28px;
+      color: #fff;
+    }
+
+    .contact-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: #9CA3AF;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .contact-card a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 22px; }
+      h2 { font-size: 17px; }
+      main { padding: 32px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <svg class="logo-ring" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="28" stroke="#2D3348" stroke-width="2"/>
+    <path d="M32 4 A28 28 0 0 1 56.97 46" stroke="#FF6B6B" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M56.97 46 A28 28 0 0 1 7.03 46" stroke="#FFD93D" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M7.03 46 A28 28 0 0 1 32 4" stroke="#6BCB77" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <text x="32" y="37" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="white">C</text>
+  </svg>
+  <h1>CalcMacro</h1>
+  <p>Privacy Policy</p>
+  <div class="badge">No data collected · No account required</div>
+</header>
+
+<main>
+
+  <p class="updated">Last updated: March 15, 2025 &nbsp;·&nbsp; Effective: March 15, 2025</p>
+
+  <div class="toc">
+    <h3>Contents</h3>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#data-collected">Data we collect</a></li>
+      <li><a href="#no-data">What we do NOT collect</a></li>
+      <li><a href="#permissions">App permissions</a></li>
+      <li><a href="#third-party">Third-party services</a></li>
+      <li><a href="#children">Children's privacy</a></li>
+      <li><a href="#health">Health information disclaimer</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. Overview -->
+  <section id="overview">
+    <h2>1. Overview</h2>
+    <p>
+      CalcMacro ("we", "our", or "the app") is a free calorie and macro
+      calculator app developed by RJ App Studio. This Privacy Policy explains
+      how we handle information when you use our app.
+    </p>
+    <div class="highlight-box green">
+      <p>
+        <strong>Short version:</strong> CalcMacro works completely offline.
+        We do not collect, store, transmit, or share any personal data.
+        Everything you enter stays on your device only.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. Data Collected -->
+  <section id="data-collected">
+    <h2>2. Data we collect</h2>
+    <p>
+      CalcMacro does not collect any personally identifiable information.
+      The values you enter into the app (age, weight, height, etc.) are used
+      only to calculate results on your device in real time. These values are
+      never transmitted to any server, database, or third party.
+    </p>
+    <div class="highlight-box">
+      <p>
+        <strong>Data entered by you (stays on device only):</strong>
+      </p>
+      <div class="tag-row">
+        <span class="tag">Age</span>
+        <span class="tag">Weight</span>
+        <span class="tag">Height</span>
+        <span class="tag">Gender</span>
+        <span class="tag">Activity level</span>
+        <span class="tag">Goal</span>
+        <span class="tag">Waist / Hip / Neck</span>
+      </div>
+    </div>
+    <p style="margin-top:14px">
+      We do not use cookies, tracking pixels, or any form of analytics
+      that identifies individual users.
+    </p>
+  </section>
+
+  <!-- 3. What we do NOT collect -->
+  <section id="no-data">
+    <h2>3. What we do NOT collect</h2>
+    <p>We explicitly do not collect any of the following:</p>
+    <ul>
+      <li>Name, email address, phone number, or any contact information</li>
+      <li>Device identifiers (IMEI, Advertising ID, etc.)</li>
+      <li>Location data (GPS or IP-based)</li>
+      <li>Camera or microphone data</li>
+      <li>Contacts or calendar information</li>
+      <li>Financial or payment information</li>
+      <li>Health records or medical history</li>
+      <li>Usage behaviour, clicks, or session recordings</li>
+      <li>Crash logs sent to our servers</li>
+    </ul>
+  </section>
+
+  <!-- 4. Permissions -->
+  <section id="permissions">
+    <h2>4. App permissions</h2>
+    <p>
+      CalcMacro requests no special Android permissions. The app does not
+      ask for access to your camera, microphone, contacts, location,
+      storage, or any other sensitive device feature.
+    </p>
+    <div class="highlight-box green">
+      <p>
+        <strong>Permissions requested:</strong> None.
+        CalcMacro works fully offline with zero device permissions.
+      </p>
+    </div>
+  </section>
+
+  <!-- 5. Third-party services -->
+  <section id="third-party">
+    <h2>5. Third-party services</h2>
+    <p>
+      The current version of CalcMacro does not integrate any third-party
+      SDKs, advertising networks, analytics platforms, or social login
+      services.
+    </p>
+    <p>
+      If future versions of the app include optional services (such as
+      Google AdMob for ads or Firebase Crashlytics for crash reporting),
+      this policy will be updated before such services are activated, and
+      users will be notified via an app update.
+    </p>
+    <div class="highlight-box yellow">
+      <p>
+        <strong>Note:</strong> If ads are added in a future update, Google AdMob
+        may collect anonymised advertising data as per
+        <a href="https://policies.google.com/privacy" target="_blank" style="color:#92400E">Google's Privacy Policy</a>.
+        We will update this policy accordingly.
+      </p>
+    </div>
+  </section>
+
+  <!-- 6. Children -->
+  <section id="children">
+    <h2>6. Children's privacy</h2>
+    <p>
+      CalcMacro is not directed at children under the age of 13. We do not
+      knowingly collect any personal information from children. Since the app
+      collects no personal data from any user, it is safe for general use.
+    </p>
+    <p>
+      If you are a parent or guardian and believe your child has provided
+      personal information through the app, please contact us. We will
+      take appropriate steps to address your concern.
+    </p>
+  </section>
+
+  <!-- 7. Health disclaimer -->
+  <section id="health">
+    <h2>7. Health information disclaimer</h2>
+    <div class="highlight-box yellow">
+      <p>
+        <strong>Important:</strong> CalcMacro provides general wellness
+        estimates based on standard scientific formulas including
+        Mifflin-St Jeor, US Navy, and Devine methods.
+      </p>
+      <br>
+      <p>
+        Results generated by this app are for <strong>informational
+        purposes only</strong> and do not constitute medical advice,
+        diagnosis, or treatment. Always consult a qualified healthcare
+        professional before making changes to your diet, exercise routine,
+        or health plan.
+      </p>
+      <br>
+      <p>
+        RJ App Studio is not responsible for any decisions made based on
+        the results provided by CalcMacro.
+      </p>
+    </div>
+  </section>
+
+  <!-- 8. Changes -->
+  <section id="changes">
+    <h2>8. Changes to this policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. Any changes will
+      be posted on this page with an updated effective date. We encourage
+      you to review this page periodically.
+    </p>
+    <p>
+      Continued use of the app after any changes to this policy constitutes
+      your acceptance of the updated terms.
+    </p>
+  </section>
+
+  <!-- 9. Contact -->
+  <section id="contact">
+    <h2>9. Contact us</h2>
+    <p>
+      If you have any questions about this Privacy Policy or the CalcMacro
+      app, please contact us:
+    </p>
+    <div class="contact-card">
+      <h3>RJ App Studio</h3>
+      <p>Website: <a href="https://rjappstudio.in" target="_blank">rjappstudio.in</a></p>
+      <p>Email: <a href="mailto:officialrjappstudio@gmail.com">officialrjappstudio@gmail.com</a></p>
+      <p style="margin-top:12px; font-size:13px; color:#6B7280">
+        We aim to respond to all privacy-related queries within 5 business days.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 <a href="https://rjappstudio.in">RJ App Studio</a> · All rights reserved.</p>
+  <p style="margin-top:6px">This policy applies to the CalcMacro Android app.</p>
+</footer>
+
+</body>
+</html>
