@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Tic Tac Toe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:       #f5f0e8;
+      --surface:  #ffffff;
+      --border:   #ddd7cc;
+      --x-color:  #c0392b;
+      --o-color:  #1a5276;
+      --accent:   #2c3e50;
+      --text:     #3d3530;
+      --muted:    #8c7b70;
+      --radius:   12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Grid background ── */
+    body::before { display: none; }
+
+    main::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(44,62,80,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(44,62,80,0.07) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    main { position: relative; }
+
+    /* ── Header ── */
+    header {
+      position: relative;
+      z-index: 1;
+      background: var(--accent);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* decorative X and O behind header */
+    header::before {
+      content: 'X';
+      position: absolute;
+      top: -20px; left: -10px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 180px;
+      font-weight: 800;
+      color: var(--x-color);
+      opacity: 0.18;
+      line-height: 1;
+      pointer-events: none;
+    }
+    header::after {
+      content: 'O';
+      position: absolute;
+      bottom: -30px; right: -10px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 180px;
+      font-weight: 800;
+      color: var(--o-color);
+      opacity: 0.18;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .game-icon {
+      display: inline-grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4px;
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 20px;
+    }
+
+    .game-icon span {
+      background: rgba(255,255,255,0.12);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .game-icon span.x { color: #e74c3c; }
+    .game-icon span.o { color: #5dade2; }
+    .game-icon span.line { background: rgba(255,255,255,0.05); }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.75);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 100px;
+      margin-bottom: 18px;
+    }
+
+    header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    header h1 .x { color: #e74c3c; }
+    header h1 .o { color: #5dade2; }
+
+    .sub {
+      margin-top: 10px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 300;
+    }
+
+    /* ── Main ── */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 52px 24px 80px;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 30px;
+      margin-bottom: 52px;
+      box-shadow: 0 2px 12px rgba(44,62,80,0.06);
+    }
+
+    .toc-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toc-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .toc ol { list-style: none; counter-reset: toc; }
+
+    .toc li {
+      counter-increment: toc;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 7px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .toc li:last-child { border-bottom: none; }
+
+    .toc li::before {
+      content: counter(toc);
+      width: 22px; height: 22px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .toc a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: var(--x-color); }
+
+    /* ── Section ── */
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.04);
+      animation: rise 0.5s ease both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    section:nth-child(2)  { animation-delay: 0.05s; }
+    section:nth-child(3)  { animation-delay: 0.10s; }
+    section:nth-child(4)  { animation-delay: 0.15s; }
+    section:nth-child(5)  { animation-delay: 0.20s; }
+    section:nth-child(6)  { animation-delay: 0.25s; }
+    section:nth-child(7)  { animation-delay: 0.30s; }
+    section:nth-child(8)  { animation-delay: 0.35s; }
+    section:nth-child(9)  { animation-delay: 0.40s; }
+    section:nth-child(10) { animation-delay: 0.45s; }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .section-num {
+      width: 28px; height: 28px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    p strong {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 18px 0;
+    }
+
+    /* ── Alert box ── */
+    .alert {
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 18px 0;
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .alert-green {
+      background: #eafaf1;
+      border: 1px solid #a9dfbf;
+      color: #1e8449;
+    }
+
+    .alert-blue {
+      background: #ebf5fb;
+      border: 1px solid #a9cce3;
+      color: #1a5276;
+    }
+
+    .alert-title {
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    /* ── List ── */
+    .no-collect {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 18px 0;
+    }
+
+    @media (max-width: 480px) {
+      .no-collect { grid-template-columns: 1fr; }
+    }
+
+    .no-collect-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fdf9f5;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .no-collect-item .icon {
+      width: 20px; height: 20px;
+      background: #fde8e6;
+      color: var(--x-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* ── Third-party card ── */
+    .service-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #f0f4f8;
+      border: 1px solid #c8d8e8;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 18px 0;
+    }
+
+    .service-icon {
+      width: 36px; height: 36px;
+      background: var(--o-color);
+      color: #fff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .service-info strong {
+      display: block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .service-info span {
+      font-family: 'Lora', serif;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+
+    /* ── Contact ── */
+    .contact-wrap {
+      text-align: center;
+      padding: 10px 0 0;
+    }
+
+    .contact-wrap p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      padding: 13px 28px;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-btn:hover {
+      background: var(--x-color);
+      transform: translateY(-2px);
+    }
+
+    .contact-btn::before { content: '✉'; font-size: 15px; }
+
+    /* ── Footer ── */
+    footer {
+      position: relative;
+      z-index: 2;
+      background: #111927;
+      color: #ffffff !important;
+      text-align: center;
+      padding: 30px 24px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    footer p { color: #ffffff !important; font-family: 'Outfit', sans-serif; }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #111927;
+      z-index: -1;
+    }
+
+    footer .brand { color: #5dade2; font-weight: 700; }
+
+    /* ── Responsive ── */
+    @media (max-width: 520px) {
+      section { padding: 24px 20px; }
+      .toc { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="game-icon" aria-hidden="true">
+      <span class="x">X</span><span class="line"></span><span class="o">O</span>
+      <span class="line"></span><span class="x">X</span><span class="line"></span>
+      <span class="o">O</span><span class="line"></span><span class="x">X</span>
+    </div>
+    <div class="badge">Legal Document</div>
+    <h1>Privacy Policy<br /><span class="x">Tic</span> <span class="o">Tac</span> Toe</h1>
+    <p class="sub">Effective Date: May 16, 2025 &nbsp;·&nbsp; Last Updated: May 16, 2025</p>
+  </header>
+
+  <!-- Main -->
+  <main>
+
+    <!-- TOC -->
+    <nav class="toc" aria-label="Table of Contents">
+      <div class="toc-title">Contents</div>
+      <ol>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#information-collection">Information Collection and Use</a></li>
+        <li><a href="#log-data">Log Data</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+        <li><a href="#third-party">Third-Party Services</a></li>
+        <li><a href="#data-security">Data Security</a></li>
+        <li><a href="#childrens-privacy">Children's Privacy</a></li>
+        <li><a href="#changes">Changes to This Privacy Policy</a></li>
+        <li><a href="#contact">Contact Information</a></li>
+      </ol>
+    </nav>
+
+    <!-- 1 -->
+    <section id="introduction">
+      <div class="section-label">
+        <div class="section-num">1</div>
+        <h2>Introduction</h2>
+      </div>
+      <div class="divider"></div>
+      <p>
+        Welcome to <strong>Tic Tac Toe</strong>, developed by <strong>RJ App Studio</strong>. 
+        This Privacy Policy describes how we handle information when you use our app on your Android device.
+      </p>
+      <p>
+        We built Tic Tac Toe as a fun, simple, and completely private experience. 
+        By using this app, you agree to the terms of this policy.
+      </p>
+      <div class="alert alert-green">
+        <div class="alert-title">Our Promise</div>
+        Tic Tac Toe does not collect, store, or share any personal information about you — ever.
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section id="information-collection">
+      <div class="section-label">
+        <div class="section-num">2</div>
+        <h2>Information Collection and Use</h2>
+      </div>
+      <div class="divider"></div>
+      <p>
+        Tic Tac Toe does <strong>not</strong> collect any personally identifiable information. 
+        We have no interest in who you are — only that you enjoy the game. 
+        The following types of data are never requested or stored:
+      </p>
+      <div class="no-collect">
+        <div class="no-collect-item"><span class="icon">✕</span> Full name</div>
+        <div class="no-collect-item"><span class="icon">✕</span> Email address</div>
+        <div class="no-collect-item"><span class="icon">✕</span> Phone number</div>
+        <div class="no-collect-item"><span class="icon">✕</span> Location / GPS</div>
+        <div class="no-collect-item"><span class="icon">✕</span> Camera or microphone</div>
+        <div class="no-collect-item"><span class="icon">✕</span> Contacts or photos</div>
+        <div class="no-collect-item"><span class="icon">✕</span> Payment information</div>
+        <div class="no-collect-item"><span class="icon">✕</span> Account credentials</div>
+      </div>
+      <p>
+        The app may access basic Android system data (such as device type or OS version) 
+        only to ensure proper functionality. This is never used to identify or profile you.
+      </p>
+    </section>
+
+    <!-- 3 -->
+    <section id="log-data">
+      <div class="section-label">
+        <div class="section-num">3</div>
+        <h2>Log Data</h2>
+      </div>
+      <div class="divider"></div>
+      <p>
+        If the app crashes or encounters an error, your device's operating system may 
+        generate log data automatically. This can include your device's IP address, 
+        device model, OS version, the time of the error, and related technical details.
+      </p>
+      <p>
+        Any such log data is used exclusively for diagnosing and resolving technical 
+        issues, is never linked to your personal identity, and is not sold or shared 
+        with any third party beyond what is strictly necessary for app maintenance.
+      </p>
+    </section>
+
+    <!-- 4 -->
+    <section id="cookies">
+      <div class="section-label">
+        <div class="section-num">4</div>
+        <h2>Cookies</h2>
+      </div>
+      <div class="divider"></div>
+      <p>
+        Tic Tac Toe does <strong>not</strong> use cookies of any kind. We do not 
+        track your behavior, store session tokens, or use any similar tracking technologies within the app.
+      </p>
+      <div class="alert alert-blue">
+        <div class="alert-title">Third-Party Note</div>
+        Third-party services integrated into the app (such as Google Play Services) may 
+        use their own identifiers or tracking technologies. Please refer to their individual 
+        privacy policies for more information.
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section id="third-party">
+      <div class="section-label">
+        <div class="section-num">5</div>
+        <h2>Third-Party Services</h2>
+      </div>
+      <div class="divider"></div>
+      <p>
+        Tic Tac Toe may use third-party services to support core functionality on 
+        Android devices. These services operate under their own privacy policies, 
+        which we encourage you to review.
+      </p>
+      <div class="service-card">
+        <div class="service-icon">G</div>
+        <div class="service-info">
+          <strong>Google Play Services</strong>
+          <span>Manages app delivery, updates, and may collect anonymized usage data per Google's Privacy Policy.</span>
+        </div>
+      </div>
+      <p>
+        We do not control the data practices of these third parties and are not 
+        responsible for their privacy policies. We only use services that are 
+        widely trusted and necessary for app functionality.
+      </p>
+    </section>
+
+    <!-- 6 -->
+    <section id="data-security">
+      <div class="section-label">
+        <div class="section-num">6</div>
+        <h2>Data Security</h2>
+      </div>
+      <div class="divider"></div>
+      <p>
+        Since Tic Tac Toe does not collect or store personal data, there is no 
+        personal information on our servers that could be compromised. 
+        We believe the best data protection is not collecting data in the first place.
+      </p>
+      <p>
+        We follow best practices in app development to ensure our software behaves 
+        safely on your device. That said, no electronic system can be guaranteed 
+        100% secure. We appreciate your understanding.
+      </p>
+    </section>
+
+    <!-- 7 -->
+    <section id="childrens-privacy">
+      <div class="section-label">
+        <div class="section-num">7</div>
+        <h2>Children's Privacy</h2>
+      </div>
+      <div class="divider"></div>
+      <p>
+        Tic Tac Toe is a family-friendly game suitable for all ages. We do not 
+        knowingly collect personal information from anyone, including children under 13.
+      </p>
+      <p>
+        Because we collect no personal data at all, the app is inherently safe 
+        for younger players. If you are a parent or guardian and have concerns 
+        about your child's use of this app, please contact us and we will respond promptly.
+      </p>
+    </section>
+
+    <!-- 8 -->
+    <section id="changes">
+      <div class="section-label">
+        <div class="section-num">8</div>
+        <h2>Changes to This Privacy Policy</h2>
+      </div>
+      <div class="divider"></div>
+      <p>
+        We may update this Privacy Policy occasionally to reflect changes in our 
+        practices or applicable laws. When we do, the "Last Updated" date at the 
+        top of this page will be revised accordingly.
+      </p>
+      <p>
+        We recommend checking this page periodically. Your continued use of 
+        Tic Tac Toe after any changes are posted means you accept the updated policy.
+      </p>
+    </section>
+
+    <!-- 9 -->
+    <section id="contact">
+      <div class="section-label">
+        <div class="section-num">9</div>
+        <h2>Contact Information</h2>
+      </div>
+      <div class="divider"></div>
+      <p>
+        Have a question or concern about this Privacy Policy? We'd love to hear from you. 
+        Feel free to reach out to us anytime.
+      </p>
+      <div class="contact-wrap">
+        <p>Get in touch with the developer</p>
+        <a class="contact-btn" href="mailto:officialrjappstudio@gmail.com">
+          officialrjappstudio@gmail.com
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 <span class="brand">RJ App Studio</span> · Tic Tac Toe · All rights reserved.</p>
+    <p style="margin-top:6px;">This policy is effective as of May 16, 2025.</p>
+  </footer>
+
+</body>
+</html>
