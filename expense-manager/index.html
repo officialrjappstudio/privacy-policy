@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Expense Manager · Budget Buddy</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d1117;
+      --surface:   #161b22;
+      --card:      #1c2230;
+      --border:    #2a3244;
+      --accent:    #4ade80;
+      --accent2:   #22d3ee;
+      --text:      #e2e8f0;
+      --muted:     #8b9ab0;
+      --heading:   #f1f5f9;
+      --link:      #4ade80;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── BACKGROUND TEXTURE ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 0%, rgba(74,222,128,.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 90% 100%, rgba(34,211,238,.05) 0%, transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: relative;
+      z-index: 10;
+      border-bottom: 1px solid var(--border);
+      background: rgba(13,17,23,.85);
+      backdrop-filter: blur(12px);
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 0;
+    }
+
+    .app-icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      box-shadow: 0 0 20px rgba(74,222,128,.25);
+    }
+
+    .brand { display: flex; flex-direction: column; gap: 1px; }
+    .brand-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      color: var(--heading);
+      letter-spacing: .01em;
+    }
+    .brand-sub { font-size: .72rem; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 5vw, 4rem) clamp(2rem, 5vw, 3rem);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      background: rgba(74,222,128,.08);
+      border: 1px solid rgba(74,222,128,.2);
+      color: var(--accent);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .35rem .85rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+      animation: fadeDown .5s ease both;
+    }
+    .pill::before { content: '🔒'; font-size: .8rem; }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      color: var(--heading);
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      animation: fadeDown .55s .05s ease both;
+    }
+    h1 em {
+      font-style: italic;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 1.4rem;
+      animation: fadeDown .6s .1s ease both;
+    }
+
+    .meta-chip {
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: .4rem .85rem;
+      font-size: .8rem;
+      color: var(--muted);
+    }
+    .meta-chip span { color: var(--text); font-weight: 500; }
+
+    /* ── LAYOUT ── */
+    .layout {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 4rem) 5rem;
+    }
+
+    /* ── INTRO CARD ── */
+    .intro-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3rem;
+      font-size: .95rem;
+      color: var(--muted);
+      line-height: 1.8;
+      animation: fadeUp .5s .15s ease both;
+    }
+    .intro-card p + p { margin-top: .9rem; }
+    .intro-card strong { color: var(--text); }
+
+    /* ── SECTIONS ── */
+    .section {
+      margin-bottom: 2.5rem;
+      animation: fadeUp .5s ease both;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .section-num {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, rgba(74,222,128,.15), rgba(34,211,238,.1));
+      border: 1px solid rgba(74,222,128,.25);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: .04em;
+      flex-shrink: 0;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      color: var(--heading);
+      letter-spacing: -.01em;
+    }
+
+    .section-body {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+    }
+
+    .section-body p { color: var(--muted); margin-bottom: .9rem; }
+    .section-body p:last-child { margin-bottom: 0; }
+    .section-body strong { color: var(--text); }
+
+    /* ── LISTS ── */
+    .styled-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .65rem;
+      margin-top: .5rem;
+    }
+
+    .styled-list li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .styled-list li::before {
+      content: '→';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: .05rem;
+    }
+
+    .styled-list li a {
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(74,222,128,.3);
+      transition: border-color .2s;
+    }
+    .styled-list li a:hover { border-color: var(--accent); }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      background: rgba(74,222,128,.06);
+      border: 1px solid rgba(74,222,128,.18);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0 .5rem;
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+    }
+    .highlight-box .icon { font-size: 1rem; flex-shrink: 0; margin-top: .1rem; }
+    .highlight-box p { margin: 0 !important; font-size: .9rem; }
+
+    /* ── PERMISSIONS TABLE ── */
+    .perm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+      margin-top: .5rem;
+    }
+
+    @media (max-width: 540px) { .perm-grid { grid-template-columns: 1fr; } }
+
+    .perm-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .9rem 1.1rem;
+      display: flex;
+      gap: .7rem;
+      align-items: flex-start;
+    }
+    .perm-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .perm-info strong { display: block; font-size: .85rem; color: var(--heading); margin-bottom: .15rem; }
+    .perm-info span { font-size: .78rem; color: var(--muted); }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(74,222,128,.08), rgba(34,211,238,.06));
+      border: 1px solid rgba(74,222,128,.2);
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .contact-card p { color: var(--muted); margin-bottom: 1rem; }
+    .contact-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--accent);
+      color: #0d1117;
+      font-weight: 600;
+      font-size: .9rem;
+      padding: .7rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity .2s, transform .15s;
+    }
+    .contact-card a:hover { opacity: .9; transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 2rem clamp(1.5rem, 5vw, 4rem);
+      text-align: center;
+    }
+    footer p { font-size: .8rem; color: var(--muted); }
+    footer strong { color: var(--text); }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+      animation: fadeUp .5s .2s ease both;
+    }
+    .toc-title {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .85rem;
+    }
+    .toc-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .toc-links a {
+      font-size: .78rem;
+      color: var(--muted);
+      text-decoration: none;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: .3rem .75rem;
+      transition: color .2s, border-color .2s;
+    }
+    .toc-links a:hover { color: var(--accent); border-color: rgba(74,222,128,.3); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section:nth-child(1)  { animation-delay: .15s }
+    .section:nth-child(2)  { animation-delay: .2s  }
+    .section:nth-child(3)  { animation-delay: .25s }
+    .section:nth-child(4)  { animation-delay: .3s  }
+    .section:nth-child(5)  { animation-delay: .35s }
+    .section:nth-child(6)  { animation-delay: .4s  }
+    .section:nth-child(7)  { animation-delay: .45s }
+    .section:nth-child(8)  { animation-delay: .5s  }
+    .section:nth-child(9)  { animation-delay: .55s }
+    .section:nth-child(10) { animation-delay: .6s  }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="app-icon">💰</div>
+      <div class="brand">
+        <span class="brand-name">Expense Manager · Budget Buddy</span>
+        <span class="brand-sub">by RJ App Studio</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="pill">Legal Document</div>
+    <h1>Privacy <em>Policy</em></h1>
+    <div class="meta-row">
+      <div class="meta-chip">📅 Effective Date: <span>April 8, 2025</span></div>
+      <div class="meta-chip">🏢 Provider: <span>RJ App Studio</span></div>
+      <div class="meta-chip">💸 Service Type: <span>Free App</span></div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main class="layout">
+
+    <!-- INTRO -->
+    <div class="intro-card">
+      <p>RJ App Studio built the <strong>Expense Manager – Budget Buddy</strong> app as a free app. This SERVICE is provided by RJ App Studio at no cost and is intended for use as is.</p>
+      <p>This page informs visitors about our policies regarding the collection, use, and disclosure of Personal Information when you use our Service. By choosing to use our Service, you agree to the collection and use of information in accordance with this policy.</p>
+      <p>Personal Information we collect is used solely for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.</p>
+    </div>
+
+    <!-- TOC -->
+    <div class="toc">
+      <div class="toc-title">Contents</div>
+      <div class="toc-links">
+        <a href="#info">Information Collection</a>
+        <a href="#log">Log Data</a>
+        <a href="#cookies">Cookies</a>
+        <a href="#providers">Service Providers</a>
+        <a href="#security">Security</a>
+        <a href="#permissions">Permissions</a>
+        <a href="#links">External Links</a>
+        <a href="#children">Children's Privacy</a>
+        <a href="#changes">Policy Changes</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+    </div>
+
+    <!-- 1. Information Collection -->
+    <div class="section" id="info">
+      <div class="section-header">
+        <div class="section-num">01</div>
+        <h2>Information Collection and Use</h2>
+      </div>
+      <div class="section-body">
+        <p>For a better experience while using our Service, we may require you to provide certain personally identifiable information. The information we request is retained on your device and is not collected by us directly, <strong>with the exception of your email address.</strong></p>
+
+        <div class="highlight-box">
+          <span class="icon">📧</span>
+          <p><strong>Email Address:</strong> We collect your email address for account creation and to enable data synchronisation and retrieval across devices.</p>
+        </div>
+
+        <p>If you choose to use the <strong>cloud backup feature</strong>, your data will be securely stored on our servers and associated with your registered email address. This allows you to restore your data when switching devices or reinstalling the app.</p>
+        <p>Receipts you upload are stored securely and privately in the cloud, linked to your account. We do not share these images with third parties.</p>
+        <p>The app uses third-party services that may collect information used to identify you. Please review their privacy policies:</p>
+        <ul class="styled-list">
+          <li><a href="https://policies.google.com/privacy" target="_blank">Google Play Services Privacy Policy</a></li>
+          <li><a href="https://support.google.com/admob/answer/6128543" target="_blank">AdMob Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2. Log Data -->
+    <div class="section" id="log">
+      <div class="section-header">
+        <div class="section-num">02</div>
+        <h2>Log Data</h2>
+      </div>
+      <div class="section-body">
+        <p>Whenever you use our Service and an error occurs, we collect data and information (through third-party products) known as <strong>Log Data</strong>. This may include:</p>
+        <ul class="styled-list">
+          <li>Your device's Internet Protocol (IP) address</li>
+          <li>Device name and operating system version</li>
+          <li>App configuration at the time of use</li>
+          <li>Date and time of your use of the Service</li>
+          <li>Other diagnostic statistics</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. Cookies -->
+    <div class="section" id="cookies">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <h2>Cookies</h2>
+      </div>
+      <div class="section-body">
+        <p>Cookies are small data files commonly used as anonymous unique identifiers. They are sent to your browser from websites you visit and stored on your device's internal memory.</p>
+        <p>This Service does <strong>not</strong> use cookies explicitly. However, third-party code and libraries used by the app may use cookies to collect information and improve their services.</p>
+        <p>You have the option to accept or refuse cookies. If you choose to refuse cookies, some portions of this Service may not function correctly.</p>
+      </div>
+    </div>
+
+    <!-- 4. Service Providers -->
+    <div class="section" id="providers">
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <h2>Service Providers</h2>
+      </div>
+      <div class="section-body">
+        <p>We may employ third-party companies and individuals for the following reasons:</p>
+        <ul class="styled-list">
+          <li>To facilitate our Service</li>
+          <li>To provide the Service on our behalf</li>
+          <li>To perform Service-related services</li>
+          <li>To assist us in analysing how our Service is used</li>
+        </ul>
+        <p style="margin-top:.9rem;">These third parties have access to your Personal Information only to perform tasks assigned to them on our behalf and are obligated <strong>not</strong> to disclose or use it for any other purpose.</p>
+      </div>
+    </div>
+
+    <!-- 5. Security -->
+    <div class="section" id="security">
+      <div class="section-header">
+        <div class="section-num">05</div>
+        <h2>Security</h2>
+      </div>
+      <div class="section-body">
+        <p>We value your trust in providing us with your Personal Information and strive to use commercially acceptable means of protecting it.</p>
+        <div class="highlight-box">
+          <span class="icon">⚠️</span>
+          <p>No method of transmission over the internet, or method of electronic storage, is 100% secure and reliable. We cannot guarantee absolute security of your data.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Permissions -->
+    <div class="section" id="permissions">
+      <div class="section-header">
+        <div class="section-num">06</div>
+        <h2>Permissions</h2>
+      </div>
+      <div class="section-body">
+        <p>The app may request the following permissions on your device:</p>
+        <div class="perm-grid">
+          <div class="perm-item">
+            <span class="perm-icon">🗂️</span>
+            <div class="perm-info">
+              <strong>Storage Access</strong>
+              <span>To allow receipt uploads and exports from your device.</span>
+            </div>
+          </div>
+          <div class="perm-item">
+            <span class="perm-icon">🌐</span>
+            <div class="perm-info">
+              <strong>Internet Access</strong>
+              <span>Required for cloud backup and login services.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. External Links -->
+    <div class="section" id="links">
+      <div class="section-header">
+        <div class="section-num">07</div>
+        <h2>Links to Other Sites</h2>
+      </div>
+      <div class="section-body">
+        <p>This Service may contain links to external sites. Clicking on a third-party link will direct you to that site. These external sites are <strong>not operated by us</strong>.</p>
+        <p>We strongly advise you to review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
+      </div>
+    </div>
+
+    <!-- 8. Children's Privacy -->
+    <div class="section" id="children">
+      <div class="section-header">
+        <div class="section-num">08</div>
+        <h2>Children's Privacy</h2>
+      </div>
+      <div class="section-body">
+        <p>This Service does not address anyone under the age of <strong>13</strong>. We do not knowingly collect personally identifiable information from children under 13.</p>
+        <p>If we discover that a child under 13 has provided personal information, we will immediately delete it from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so we can take necessary action.</p>
+      </div>
+    </div>
+
+    <!-- 9. Changes -->
+    <div class="section" id="changes">
+      <div class="section-header">
+        <div class="section-num">09</div>
+        <h2>Changes to This Privacy Policy</h2>
+      </div>
+      <div class="section-body">
+        <p>We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+        <p><strong>Changes are effective immediately</strong> after they are posted on this page.</p>
+      </div>
+    </div>
+
+    <!-- 10. Contact -->
+    <div class="section" id="contact">
+      <div class="section-header">
+        <div class="section-num">10</div>
+        <h2>Contact Us</h2>
+      </div>
+      <div class="section-body">
+        <p>If you have any questions or suggestions about our Privacy Policy, we'd love to hear from you.</p>
+        <div class="contact-card">
+          <p>Reach out to our team directly — we typically respond within 1–2 business days.</p>
+          <a href="mailto:officialrjappstudio@gmail.com">✉️ officialrjappstudio@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>RJ App Studio</strong> &nbsp;·&nbsp; Made in India 🇮🇳 &nbsp;·&nbsp; Copyright © 2023–2024 RJ App Studio</p>
+    <p style="margin-top:.4rem;">Expense Manager – Budget Buddy &nbsp;·&nbsp; Privacy Policy effective April 8, 2025</p>
+  </footer>
+
+</body>
+</html>
