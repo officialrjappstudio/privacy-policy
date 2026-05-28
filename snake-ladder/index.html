@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy – Snake &amp; Ladder</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #F8FAFC;
+      color: #1E293B;
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: white;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+    .hero-icon { font-size: 56px; display: block; margin-bottom: 12px; }
+    .hero h1  { font-size: 32px; font-weight: 900; letter-spacing: -1px; margin-bottom: 6px; }
+    .hero p   { font-size: 15px; color: rgba(255,255,255,.65); max-width: 520px; margin: 0 auto; }
+
+    .badge {
+      display: inline-block; margin-top: 18px;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50px; padding: 5px 16px;
+      font-size: 12px; color: rgba(255,255,255,.8); font-weight: 600;
+    }
+
+    /* ── Layout ── */
+    .container { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* ── Quick summary cards ── */
+    .summary-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px; margin-bottom: 48px;
+    }
+    .summary-card {
+      background: white; border-radius: 14px; padding: 20px 18px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.07);
+      border: 1px solid #E2E8F0; text-align: center;
+    }
+    .summary-card .sc-icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .summary-card .sc-title { font-size: 12px; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+    .summary-card .sc-val   { font-size: 13px; font-weight: 700; color: #1E293B; }
+    .summary-card.green  { border-top: 3px solid #22C55E; }
+    .summary-card.blue   { border-top: 3px solid #3B82F6; }
+    .summary-card.purple { border-top: 3px solid #8B5CF6; }
+    .summary-card.amber  { border-top: 3px solid #F59E0B; }
+
+    /* ── Sections ── */
+    .section {
+      background: white; border-radius: 16px; padding: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      border: 1px solid #E2E8F0; margin-bottom: 20px;
+    }
+    .section-header {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 18px;
+      padding-bottom: 14px; border-bottom: 1px solid #F1F5F9;
+    }
+    .section-header .sec-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .section-header h2 { font-size: 18px; font-weight: 800; color: #0F172A; }
+
+    /* icon bg colours */
+    .bg-green  { background: #DCFCE7; }
+    .bg-blue   { background: #DBEAFE; }
+    .bg-red    { background: #FEE2E2; }
+    .bg-purple { background: #EDE9FE; }
+    .bg-amber  { background: #FEF3C7; }
+    .bg-teal   { background: #CCFBF1; }
+    .bg-pink   { background: #FCE7F3; }
+    .bg-gray   { background: #F1F5F9; }
+
+    p { margin-bottom: 12px; font-size: 15px; color: #334155; }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol { padding-left: 22px; margin-bottom: 12px; }
+    li { font-size: 15px; color: #334155; margin-bottom: 6px; }
+
+    .highlight-box {
+      background: #EFF6FF; border-left: 4px solid #3B82F6;
+      border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 16px 0;
+    }
+    .highlight-box.green  { background: #F0FDF4; border-color: #22C55E; }
+    .highlight-box.amber  { background: #FFFBEB; border-color: #F59E0B; }
+    .highlight-box p { margin: 0; font-size: 14px; font-weight: 600; color: #1E293B; }
+
+    table {
+      width: 100%; border-collapse: collapse; margin: 14px 0;
+      font-size: 14px;
+    }
+    th {
+      background: #F8FAFC; font-weight: 700; color: #475569;
+      padding: 10px 14px; text-align: left; border-bottom: 2px solid #E2E8F0;
+    }
+    td { padding: 10px 14px; border-bottom: 1px solid #F1F5F9; color: #334155; }
+    tr:last-child td { border-bottom: none; }
+    .badge-no  { background: #DCFCE7; color: #166534; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 50px; }
+    .badge-yes { background: #FEE2E2; color: #991B1B; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 50px; }
+    .badge-na  { background: #F1F5F9; color: #64748B;  font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 50px; }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: linear-gradient(135deg, #1e3a5f, #0f2540);
+      border-radius: 16px; padding: 32px;
+      color: white; text-align: center; margin-bottom: 20px;
+    }
+    .contact-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+    .contact-card p  { color: rgba(255,255,255,.7); margin-bottom: 18px; font-size: 14px; }
+    .contact-card a  {
+      display: inline-block; background: white; color: #0f2540;
+      padding: 10px 28px; border-radius: 50px; font-weight: 800; font-size: 14px;
+      text-decoration: none; transition: opacity .2s;
+    }
+    .contact-card a:hover { opacity: .9; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center; padding: 24px;
+      font-size: 12px; color: #94A3B8; border-top: 1px solid #E2E8F0;
+    }
+    footer strong { color: #475569; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 24px; }
+      .section  { padding: 22px 18px; }
+      .container { padding: 28px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ Hero ══ -->
+<div class="hero">
+  <span class="hero-icon">🎲</span>
+  <h1>Privacy Policy</h1>
+  <p>Snake &amp; Ladder — Classic Board Game</p>
+  <span class="badge">Effective date: May 29, 2026</span>
+</div>
+
+<!-- ══ Content ══ -->
+<div class="container">
+
+  <!-- Quick-glance summary -->
+  <div class="summary-grid">
+    <div class="summary-card green">
+      <span class="sc-icon">🔒</span>
+      <div class="sc-title">Data Collected</div>
+      <div class="sc-val">None</div>
+    </div>
+    <div class="summary-card blue">
+      <span class="sc-icon">📡</span>
+      <div class="sc-title">Internet Required</div>
+      <div class="sc-val">No</div>
+    </div>
+    <div class="summary-card purple">
+      <span class="sc-icon">👤</span>
+      <div class="sc-title">Account Required</div>
+      <div class="sc-val">No</div>
+    </div>
+    <div class="summary-card amber">
+      <span class="sc-icon">📢</span>
+      <div class="sc-title">Ads / Tracking</div>
+      <div class="sc-val">None</div>
+    </div>
+  </div>
+
+  <!-- 1. Introduction -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-icon bg-blue">📋</div>
+      <h2>1. Introduction</h2>
+    </div>
+    <p>
+      Welcome to <strong>Snake &amp; Ladder</strong>, developed by <strong>RJ App Studio</strong>
+      (<code>com.rjappstudio.snakeladder</code>). This Privacy Policy explains how our application
+      handles information when you use it on your Android device.
+    </p>
+    <p>
+      Snake &amp; Ladder is a classic offline board game. It is designed to work entirely on your
+      device — no internet connection is required, no accounts are needed, and no personal data
+      is ever collected, stored, or transmitted.
+    </p>
+    <div class="highlight-box green">
+      <p>✅ Short version: We don't collect any data. Your game stays on your device.</p>
+    </div>
+  </div>
+
+  <!-- 2. Information We Collect -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-icon bg-green">📦</div>
+      <h2>2. Information We Collect</h2>
+    </div>
+    <p>
+      <strong>We do not collect any personal information.</strong> The table below summarises
+      every data category relevant to a mobile game and our position on each:
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Data Category</th>
+          <th>Collected?</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Name / Email / Phone</td>
+          <td><span class="badge-no">NO</span></td>
+          <td>No accounts or registration</td>
+        </tr>
+        <tr>
+          <td>Location Data</td>
+          <td><span class="badge-no">NO</span></td>
+          <td>No GPS or location access</td>
+        </tr>
+        <tr>
+          <td>Device Identifiers</td>
+          <td><span class="badge-no">NO</span></td>
+          <td>No IMEI, Android ID, or Ad ID</td>
+        </tr>
+        <tr>
+          <td>Camera / Microphone</td>
+          <td><span class="badge-no">NO</span></td>
+          <td>Not accessed</td>
+        </tr>
+        <tr>
+          <td>Contacts / Calls</td>
+          <td><span class="badge-no">NO</span></td>
+          <td>Not accessed</td>
+        </tr>
+        <tr>
+          <td>Usage / Analytics</td>
+          <td><span class="badge-no">NO</span></td>
+          <td>No analytics SDK embedded</td>
+        </tr>
+        <tr>
+          <td>Crash Reports</td>
+          <td><span class="badge-no">NO</span></td>
+          <td>No crash reporting service</td>
+        </tr>
+        <tr>
+          <td>Payment Information</td>
+          <td><span class="badge-no">NO</span></td>
+          <td>App is completely free</td>
+        </tr>
+        <tr>
+          <td>Player Names (in-game)</td>
+          <td><span class="badge-na">LOCAL ONLY</span></td>
+          <td>Typed during setup, never saved or transmitted</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3. Permissions -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-icon bg-amber">🔑</div>
+      <h2>3. App Permissions</h2>
+    </div>
+    <p>
+      Snake &amp; Ladder requests <strong>no Android permissions</strong> at runtime. The app
+      does not request access to storage, camera, microphone, contacts, location, or any other
+      sensitive device resource.
+    </p>
+    <div class="highlight-box amber">
+      <p>⚠️ If your device shows any system-level permission dialogs, they are generated by the
+         Android OS itself (e.g., installing from unknown sources) — not by this app.</p>
+    </div>
+  </div>
+
+  <!-- 4. Internet / Network -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-icon bg-teal">📡</div>
+      <h2>4. Internet &amp; Network Access</h2>
+    </div>
+    <p>
+      This application is <strong>fully offline</strong>. It does not connect to the internet,
+      any external server, or any third-party service. No data is sent from your device to any
+      remote endpoint — ever.
+    </p>
+    <ul>
+      <li>No API calls are made.</li>
+      <li>No cloud saves or sync.</li>
+      <li>No advertisements are fetched.</li>
+      <li>No social or analytics SDKs are integrated.</li>
+    </ul>
+  </div>
+
+  <!-- 5. Third-Party Services -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-icon bg-purple">🔗</div>
+      <h2>5. Third-Party Services</h2>
+    </div>
+    <p>
+      The app is built using <strong>Apache Capacitor</strong> as a native bridge. Capacitor
+      is an open-source framework that does not collect or transmit any user data on its own.
+      No third-party advertising, analytics, or tracking libraries (such as Google AdMob,
+      Firebase, Facebook SDK, etc.) are embedded in this application.
+    </p>
+    <p>
+      Distribution through the <strong>Google Play Store</strong> means that Google's own
+      terms of service and privacy policy apply to the download and installation process.
+      We have no control over data Google collects as a platform. Please review
+      <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>
+      for details.
+    </p>
+  </div>
+
+  <!-- 6. Children's Privacy -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-icon bg-pink">👶</div>
+      <h2>6. Children's Privacy</h2>
+    </div>
+    <p>
+      Snake &amp; Ladder is suitable for all ages, including children under 13. Because the
+      application collects absolutely no personal data, it is fully compliant with the
+      <strong>Children's Online Privacy Protection Act (COPPA)</strong> and equivalent
+      international regulations (e.g., GDPR-K, COPPA 2.0).
+    </p>
+    <div class="highlight-box green">
+      <p>✅ No personal data is collected from any user, regardless of age.</p>
+    </div>
+    <p>
+      Parents and guardians can allow children to use this app with confidence that no
+      information about their child is collected, stored, or shared.
+    </p>
+  </div>
+
+  <!-- 7. Data Security -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-icon bg-green">🛡️</div>
+      <h2>7. Data Security</h2>
+    </div>
+    <p>
+      Since we do not collect or store any personal data, there is no user data at risk.
+      All game state (player names, positions, scores) exists only in your device's
+      temporary memory (RAM) and is discarded when you close the app.
+    </p>
+    <p>
+      The app binary is signed with a developer certificate to ensure integrity and
+      authenticity when distributed through Google Play.
+    </p>
+  </div>
+
+  <!-- 8. Data Retention -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-icon bg-gray">🗄️</div>
+      <h2>8. Data Retention</h2>
+    </div>
+    <p>
+      No personal data is retained. Player names entered in the game setup screen are held
+      in-memory only for the duration of that session and are permanently deleted when the
+      app is closed or a new game is started. No data is written to persistent storage on
+      your device.
+    </p>
+  </div>
+
+  <!-- 9. Your Rights -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-icon bg-blue">⚖️</div>
+      <h2>9. Your Rights (GDPR &amp; Global)</h2>
+    </div>
+    <p>
+      Under the General Data Protection Regulation (GDPR), California Consumer Privacy Act
+      (CCPA), and similar laws, users have rights including access, correction, deletion, and
+      portability of their personal data.
+    </p>
+    <p>
+      Because <strong>Snake &amp; Ladder collects no personal data</strong>, these rights are
+      satisfied by default — there is no data to access, correct, delete, or port.
+    </p>
+    <p>
+      If you believe we may hold any information about you, please contact us at the address
+      below and we will respond within 30 days.
+    </p>
+  </div>
+
+  <!-- 10. Changes -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-icon bg-amber">🔔</div>
+      <h2>10. Changes to This Policy</h2>
+    </div>
+    <p>
+      We may update this Privacy Policy from time to time to reflect changes in the app or
+      applicable law. Any changes will be posted on this page with an updated effective date.
+      Continued use of the app after changes constitutes your acceptance of the revised policy.
+    </p>
+    <p>
+      We will notify users of any material changes through a notice within the application
+      or via the Google Play Store listing.
+    </p>
+    <table>
+      <thead>
+        <tr><th>Version</th><th>Date</th><th>Summary</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1.0</td><td>May 29, 2026</td><td>Initial policy — no data collected</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-card">
+    <h2>📬 Contact Us</h2>
+    <p>
+      Have questions about this Privacy Policy? We're happy to help.
+    </p>
+    <a href="mailto:privacy@rjappstudio.com">privacy@rjappstudio.com</a>
+  </div>
+
+  <!-- App info strip -->
+  <div class="section" style="text-align:center; padding:20px;">
+    <p style="font-size:13px; color:#64748B; margin:0;">
+      <strong>App Name:</strong> Snake &amp; Ladder &nbsp;|&nbsp;
+      <strong>Developer:</strong> RJ App Studio &nbsp;|&nbsp;
+      <strong>Package:</strong> com.rjappstudio.snakeladder &nbsp;|&nbsp;
+      <strong>Platform:</strong> Android
+    </p>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  <p>© 2026 <strong>RJ App Studio</strong>. All rights reserved.</p>
+  <p style="margin-top:4px;">This privacy policy was last updated on <strong>May 29, 2026</strong>.</p>
+</footer>
+
+</body>
+</html>
