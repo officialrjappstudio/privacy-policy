@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — BMI &amp; Weight Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:      #07090F;
+      --panel:    #0D1119;
+      --hairline: #1C2230;
+      --lume:     #37E5D7;
+      --text:     #E6EAF2;
+      --muted:    #8A93A6;
+      --amber:    #F5B14C;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--ink);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    header {
+      padding: 56px 24px 44px;
+      text-align: center;
+      border-bottom: 1px solid var(--hairline);
+      background:
+        radial-gradient(60% 120% at 50% 0%, rgba(55, 229, 215, 0.08), transparent 70%),
+        var(--ink);
+    }
+
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--lume);
+      margin-bottom: 14px;
+    }
+
+    header h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 34px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #fff;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      border: 1px solid rgba(55, 229, 215, 0.35);
+      color: var(--lume);
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 16px;
+      margin-top: 16px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    section { margin-bottom: 44px; }
+
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 21px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 14px;
+      padding-left: 14px;
+      border-left: 3px solid var(--lume);
+    }
+
+    p { font-size: 15px; color: #C3CAD8; margin-bottom: 14px; }
+
+    ul { padding-left: 22px; margin-bottom: 14px; }
+    li { font-size: 15px; color: #C3CAD8; margin-bottom: 6px; }
+
+    a { color: var(--lume); }
+
+    .highlight-box {
+      background: var(--panel);
+      border: 1px solid var(--hairline);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .highlight-box.lume { border-color: rgba(55, 229, 215, 0.35); }
+    .highlight-box.amber { border-color: rgba(245, 177, 76, 0.4); }
+
+    .highlight-box p { margin: 0; font-size: 14px; }
+    .highlight-box strong { color: #fff; }
+
+    .contact-card {
+      background: var(--panel);
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      padding: 28px;
+    }
+
+    .contact-card h2 { border: none; padding: 0; margin-bottom: 8px; }
+    .contact-card a { font-family: 'JetBrains Mono', monospace; font-size: 14px; }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 32px 24px 48px;
+      border-top: 1px solid var(--hairline);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">RJ App Studio</div>
+    <h1>Privacy Policy</h1>
+    <p>BMI &amp; Weight Tracker</p>
+    <div class="badge">Your health data never leaves your device</div>
+  </header>
+
+  <main>
+    <div class="updated">Last updated: 16 July 2026</div>
+
+    <section>
+      <h2>Overview</h2>
+      <p>BMI &amp; Weight Tracker (&ldquo;the app&rdquo;) is developed by RJ App Studio. This policy
+      explains what data the app collects, how it&rsquo;s used, and your choices.</p>
+    </section>
+
+    <section>
+      <h2>Data we collect directly</h2>
+      <div class="highlight-box lume">
+        <p><strong>None of your health data leaves your device.</strong> The app stores your BMI
+        calculations, weight journal entries, goal weight, and reminder settings locally on your
+        device using on-device storage (SQLite). We do not operate a server, do not require an
+        account or login, and do not sync your data to any cloud service.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Data collected by third-party services</h2>
+      <p>The app is supported by ads served through <strong>Google AdMob</strong>. To deliver ads,
+      AdMob and its partners may collect:</p>
+      <ul>
+        <li>Advertising ID (a resettable device identifier)</li>
+        <li>General device information (device type, OS version)</li>
+        <li>Approximate location (derived from IP address, not precise GPS)</li>
+        <li>Ad interaction data (impressions, clicks)</li>
+      </ul>
+      <p>This data is used for ad delivery, frequency capping, and — where you&rsquo;ve given
+      consent — ad personalization. Where required (EEA, UK, Switzerland, and applicable US
+      states), the app presents a consent form (via Google&rsquo;s User Messaging Platform) before
+      any ad-related data collection begins, and you can change your choice at any time.</p>
+      <p>For more detail on how Google&rsquo;s advertising products handle data, see
+      <a href="https://policies.google.com/privacy">Google&rsquo;s Privacy &amp; Terms</a> and
+      <a href="https://policies.google.com/technologies/partner-sites">How Google uses information
+      from sites or apps that use our services</a>.</p>
+    </section>
+
+    <section>
+      <h2>Children&rsquo;s privacy</h2>
+      <p>This app is not directed at children under 13 and we do not knowingly collect data from
+      children. Ad content is configured for a general audience, not child-directed treatment.</p>
+    </section>
+
+    <section>
+      <h2>Data deletion</h2>
+      <p>Since your weigh-in data is stored only on your device, uninstalling the app deletes it.
+      There is no account or server-side record to separately request deletion of.</p>
+    </section>
+
+    <section>
+      <h2>Health disclaimer</h2>
+      <div class="highlight-box amber">
+        <p><strong>The app is not a medical device.</strong> BMI is a general screening measure,
+        not a diagnosis. The app&rsquo;s calculations and trends are for informational purposes
+        only — consult a qualified healthcare professional for medical advice.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Changes to this policy</h2>
+      <p>We may update this policy as the app changes (e.g., adding new features or ad formats).
+      Material changes will be reflected in an updated &ldquo;Last updated&rdquo; date here and,
+      where appropriate, in the app&rsquo;s release notes.</p>
+    </section>
+
+    <section>
+      <div class="contact-card">
+        <h2>Contact</h2>
+        <p>Questions about this policy: <a href="mailto:ravip495@gmail.com">ravip495@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 RJ App Studio</footer>
+</body>
+</html>
