@@ -144,7 +144,7 @@
   <span class="hero-icon">🎲</span>
   <h1>Privacy Policy</h1>
   <p>Snake &amp; Ladder — Classic Board Game</p>
-  <span class="badge">Effective date: May 29, 2026</span>
+  <span class="badge">Effective date: September 26, 2026</span>
 </div>
 
 <!-- ══ Content ══ -->
@@ -155,12 +155,12 @@
     <div class="summary-card green">
       <span class="sc-icon">🔒</span>
       <div class="sc-title">Data Collected</div>
-      <div class="sc-val">None</div>
+      <div class="sc-val">Limited: ads &amp; usage stats</div>
     </div>
     <div class="summary-card blue">
       <span class="sc-icon">📡</span>
       <div class="sc-title">Internet Required</div>
-      <div class="sc-val">No</div>
+      <div class="sc-val">No (only for ads)</div>
     </div>
     <div class="summary-card purple">
       <span class="sc-icon">👤</span>
@@ -169,8 +169,8 @@
     </div>
     <div class="summary-card amber">
       <span class="sc-icon">📢</span>
-      <div class="sc-title">Ads / Tracking</div>
-      <div class="sc-val">None</div>
+      <div class="sc-title">Ads</div>
+      <div class="sc-val">Optional rewarded ads</div>
     </div>
   </div>
 
@@ -182,16 +182,20 @@
     </div>
     <p>
       Welcome to <strong>Snake &amp; Ladder</strong>, developed by <strong>RJ App Studio</strong>.
-      This Privacy Policy explains how our application handles information when you use it on
-      your Android device.
+      This Privacy Policy explains what information the app handles when you use it on your
+      Android device, why, and the choices you have.
     </p>
     <p>
-      Snake &amp; Ladder is a classic offline board game. It is designed to work entirely on your
-      device — no internet connection is required, no accounts are needed, and no personal data
-      is ever collected, stored, or transmitted.
+      The game itself works offline and needs no account. The app includes two Google services:
+      <strong>Google AdMob</strong>, which shows optional rewarded ads (for example, “watch an ad to
+      unlock a board for 24 hours”), and <strong>Google Analytics for Firebase</strong>, which tells
+      us how the game is used so we can improve it. These services collect limited device and
+      usage information, described below.
     </p>
     <div class="highlight-box green">
-      <p>✅ Short version: We don't collect any data. Your game stays on your device.</p>
+      <p>✅ Short version: we never ask for your name, email or phone number. Your games are saved
+         only on your device. Google collects limited device and usage data to show ads and
+         produce anonymous usage statistics.</p>
     </div>
   </div>
 
@@ -199,11 +203,11 @@
   <div class="section">
     <div class="section-header">
       <div class="sec-icon bg-green">📦</div>
-      <h2>2. Information We Collect</h2>
+      <h2>2. Information Collected</h2>
     </div>
     <p>
-      <strong>We do not collect any personal information.</strong> The table below summarises
-      every data category relevant to a mobile game and our position on each:
+      RJ App Studio does not run its own servers and does not receive your personal information
+      directly. The Google services in the app collect the following:
     </p>
     <table>
       <thead>
@@ -220,44 +224,39 @@
           <td>No accounts or registration</td>
         </tr>
         <tr>
-          <td>Location Data</td>
+          <td>Precise location</td>
           <td><span class="badge-no">NO</span></td>
-          <td>No GPS or location access</td>
+          <td>No GPS access. Google may estimate your approximate region (country or city) from your IP address.</td>
         </tr>
         <tr>
-          <td>Device Identifiers</td>
-          <td><span class="badge-no">NO</span></td>
-          <td>No IMEI, Android ID, or Ad ID</td>
+          <td>Device identifiers</td>
+          <td><span class="badge-na">YES (Google)</span></td>
+          <td>Advertising ID, app set ID and an app instance ID, used by AdMob and Google Analytics</td>
         </tr>
         <tr>
-          <td>Camera / Microphone</td>
+          <td>App usage</td>
+          <td><span class="badge-na">YES (Google)</span></td>
+          <td>Events such as app opens, games started and finished, boards unlocked and ads viewed</td>
+        </tr>
+        <tr>
+          <td>Diagnostics</td>
+          <td><span class="badge-na">YES (Google)</span></td>
+          <td>Ad performance and error information collected by the AdMob SDK</td>
+        </tr>
+        <tr>
+          <td>Camera / Microphone / Contacts</td>
           <td><span class="badge-no">NO</span></td>
           <td>Not accessed</td>
         </tr>
         <tr>
-          <td>Contacts / Calls</td>
+          <td>Payment information</td>
           <td><span class="badge-no">NO</span></td>
-          <td>Not accessed</td>
+          <td>The app is free and has no purchases</td>
         </tr>
         <tr>
-          <td>Usage / Analytics</td>
-          <td><span class="badge-no">NO</span></td>
-          <td>No analytics SDK embedded</td>
-        </tr>
-        <tr>
-          <td>Crash Reports</td>
-          <td><span class="badge-no">NO</span></td>
-          <td>No crash reporting service</td>
-        </tr>
-        <tr>
-          <td>Payment Information</td>
-          <td><span class="badge-no">NO</span></td>
-          <td>App is completely free</td>
-        </tr>
-        <tr>
-          <td>Player Names (in-game)</td>
-          <td><span class="badge-na">LOCAL ONLY</span></td>
-          <td>Typed during setup, never saved or transmitted</td>
+          <td>Player names &amp; saved games</td>
+          <td><span class="badge-na">ON DEVICE ONLY</span></td>
+          <td>Stored in the app’s local storage so you can resume a game; never sent anywhere</td>
         </tr>
       </tbody>
     </table>
@@ -270,14 +269,12 @@
       <h2>3. App Permissions</h2>
     </div>
     <p>
-      Snake &amp; Ladder requests <strong>no Android permissions</strong> at runtime. The app
-      does not request access to storage, camera, microphone, contacts, location, or any other
-      sensitive device resource.
+      The app asks for <strong>no runtime permissions</strong>. It declares these standard
+      permissions, which Android grants automatically: <strong>Internet</strong> and
+      <strong>network state</strong> (to load ads), and <strong>Advertising ID</strong>
+      (used by AdMob and Google Analytics). It does not access storage, camera, microphone,
+      contacts or location.
     </p>
-    <div class="highlight-box amber">
-      <p>⚠️ If your device shows any system-level permission dialogs, they are generated by the
-         Android OS itself (e.g., installing from unknown sources) — not by this app.</p>
-    </div>
   </div>
 
   <!-- 4. Internet / Network -->
@@ -287,15 +284,13 @@
       <h2>4. Internet &amp; Network Access</h2>
     </div>
     <p>
-      This application is <strong>fully offline</strong>. It does not connect to the internet,
-      any external server, or any third-party service. No data is sent from your device to any
-      remote endpoint — ever.
+      You can play without an internet connection. When your device is online, the app
+      connects to Google’s servers to load ads and to send usage statistics.
     </p>
     <ul>
-      <li>No API calls are made.</li>
-      <li>No cloud saves or sync.</li>
-      <li>No advertisements are fetched.</li>
-      <li>No social or analytics SDKs are integrated.</li>
+      <li>No cloud saves or sync: your games stay on your device.</li>
+      <li>Ads are only shown when you choose to watch one.</li>
+      <li>No social network SDKs are integrated.</li>
     </ul>
   </div>
 
@@ -306,17 +301,22 @@
       <h2>5. Third-Party Services</h2>
     </div>
     <p>
-      The app is built using <strong>Apache Capacitor</strong> as a native bridge. Capacitor
-      is an open-source framework that does not collect or transmit any user data on its own.
-      No third-party advertising, analytics, or tracking libraries (such as Google AdMob,
-      Firebase, Facebook SDK, etc.) are embedded in this application.
+      <strong>Google AdMob</strong> serves the optional rewarded ads. Ad content is limited to
+      family-appropriate ratings. In the EEA, UK and Switzerland you are asked for consent before
+      personalised ads are shown, and you can change your choice at any time with
+      <strong>Privacy options</strong> on the game’s main screen. Learn more in
+      <a href="https://policies.google.com/technologies/partner-sites" target="_blank">How Google uses information from apps that use its services</a>.
     </p>
     <p>
-      Distribution through the <strong>Google Play Store</strong> means that Google's own
-      terms of service and privacy policy apply to the download and installation process.
-      We have no control over data Google collects as a platform. Please review
-      <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>
-      for details.
+      <strong>Google Analytics for Firebase</strong> gives us aggregated statistics such as how
+      many games are played. We use it only to improve the game. See the
+      <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase privacy information</a>.
+    </p>
+    <p>
+      The app is built with <strong>Capacitor</strong>, an open-source framework that does not
+      collect data on its own. Google’s own
+      <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>
+      applies to data collected by Google services and by Google Play.
     </p>
   </div>
 
@@ -327,17 +327,14 @@
       <h2>6. Children's Privacy</h2>
     </div>
     <p>
-      Snake &amp; Ladder is suitable for all ages, including children under 13. Because the
-      application collects absolutely no personal data, it is fully compliant with the
-      <strong>Children's Online Privacy Protection Act (COPPA)</strong> and equivalent
-      international regulations (e.g., GDPR-K, COPPA 2.0).
+      Snake &amp; Ladder is intended for a general audience aged <strong>13 and over</strong>.
+      We do not knowingly collect personal information from children under 13. Ads in the app
+      are limited to content rated suitable for general and family audiences.
     </p>
-    <div class="highlight-box green">
-      <p>✅ No personal data is collected from any user, regardless of age.</p>
-    </div>
     <p>
-      Parents and guardians can allow children to use this app with confidence that no
-      information about their child is collected, stored, or shared.
+      If you believe a child under 13 has used the app and want data associated with their
+      device removed, contact us at the address below and we will help you request deletion
+      from Google.
     </p>
   </div>
 
@@ -348,13 +345,12 @@
       <h2>7. Data Security</h2>
     </div>
     <p>
-      Since we do not collect or store any personal data, there is no user data at risk.
-      All game state (player names, positions, scores) exists only in your device's
-      temporary memory (RAM) and is discarded when you close the app.
+      Data sent to Google services is encrypted in transit. Saved games and player names stay in
+      the app’s private storage on your device, which other apps cannot read.
     </p>
     <p>
-      The app binary is signed with a developer certificate to ensure integrity and
-      authenticity when distributed through Google Play.
+      The app is signed with a developer certificate to ensure integrity and authenticity when
+      distributed through Google Play.
     </p>
   </div>
 
@@ -365,10 +361,10 @@
       <h2>8. Data Retention</h2>
     </div>
     <p>
-      No personal data is retained. Player names entered in the game setup screen are held
-      in-memory only for the duration of that session and are permanently deleted when the
-      app is closed or a new game is started. No data is written to persistent storage on
-      your device.
+      Saved games and board unlocks stay on your device until you finish the game, clear the
+      app’s data or uninstall it. Google keeps usage statistics according to its own retention
+      settings (for Google Analytics, event-level data is kept for 2 months by default), and
+      advertising data according to Google’s policies.
     </p>
   </div>
 
@@ -376,19 +372,17 @@
   <div class="section">
     <div class="section-header">
       <div class="sec-icon bg-blue">⚖️</div>
-      <h2>9. Your Rights (GDPR &amp; Global)</h2>
+      <h2>9. Your Choices &amp; Rights</h2>
     </div>
+    <ul>
+      <li>Reset or delete your Advertising ID in Android <em>Settings → Privacy → Ads</em>.</li>
+      <li>In the EEA, UK and Switzerland, change your ad consent with <strong>Privacy options</strong> on the main screen.</li>
+      <li>Delete your saved games by clearing the app’s data or uninstalling the app.</li>
+    </ul>
     <p>
-      Under the General Data Protection Regulation (GDPR), California Consumer Privacy Act
-      (CCPA), and similar laws, users have rights including access, correction, deletion, and
-      portability of their personal data.
-    </p>
-    <p>
-      Because <strong>Snake &amp; Ladder collects no personal data</strong>, these rights are
-      satisfied by default — there is no data to access, correct, delete, or port.
-    </p>
-    <p>
-      If you believe we may hold any information about you, please contact us at the address
+      Under GDPR, CCPA, India’s DPDP Act and similar laws you may have rights to access, correct
+      or delete your personal data. Because RJ App Studio does not hold your personal data
+      directly, we will help you exercise these rights with Google. Contact us at the address
       below and we will respond within 30 days.
     </p>
   </div>
@@ -400,19 +394,16 @@
       <h2>10. Changes to This Policy</h2>
     </div>
     <p>
-      We may update this Privacy Policy from time to time to reflect changes in the app or
-      applicable law. Any changes will be posted on this page with an updated effective date.
-      Continued use of the app after changes constitutes your acceptance of the revised policy.
-    </p>
-    <p>
-      We will notify users of any material changes through a notice within the application
-      or via the Google Play Store listing.
+      We may update this Privacy Policy to reflect changes in the app or applicable law. Changes
+      are posted on this page with a new effective date, and material changes are announced in
+      the app’s Google Play release notes.
     </p>
     <table>
       <thead>
         <tr><th>Version</th><th>Date</th><th>Summary</th></tr>
       </thead>
       <tbody>
+        <tr><td>1.1</td><td>September 26, 2026</td><td>Added optional rewarded ads (Google AdMob), usage statistics (Google Analytics for Firebase) and on-device saved games</td></tr>
         <tr><td>1.0</td><td>May 29, 2026</td><td>Initial policy — no data collected</td></tr>
       </tbody>
     </table>
@@ -440,10 +431,8 @@
 
 <footer>
   <p>© 2026 <strong>RJ App Studio</strong>. All rights reserved.</p>
-  <p style="margin-top:4px;">This privacy policy was last updated on <strong>May 29, 2026</strong>.</p>
+  <p style="margin-top:4px;">This privacy policy was last updated on <strong>September 26, 2026</strong>.</p>
 </footer>
 
-
-  <p class="rj-more" style="text-align:center;margin:32px 0 24px;font-size:14px">Made by <a href="https://rjappstudio.in/">RJ App Studio</a> · <a href="https://rjappstudio.in/snake-and-ladder-king/">About this app</a></p>
 </body>
 </html>
