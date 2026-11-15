@@ -166,7 +166,7 @@
   <p style="font-size:18px; opacity:0.9; margin-top:6px;">AgeWise: Birthday &amp; Age Calculator</p>
   <div class="meta">
     Effective Date: <strong id="effective-date">March 16, 2025</strong> &nbsp;·&nbsp;
-    Last Updated: <strong id="last-updated">March 19, 2026</strong>
+    Last Updated: <strong id="last-updated">November 15, 2026</strong>
   </div>
 </header>
 
@@ -179,34 +179,32 @@
   <!-- 1. Overview -->
   <section>
     <h2><span class="icon">📋</span> 1. Overview</h2>
-    <p>AgeWise is a simple utility app that calculates your exact age, shows a countdown to your next birthday, and provides fun date-based facts. The App is designed to function <strong>entirely on your device</strong>.</p>
+    <p>AgeWise is a simple utility app that calculates your exact age, shows a countdown to your next birthday, and provides fun date-based facts. The calculators work on your device and do not need internet.</p>
     <div class="highlight-box">
-      <strong>Key commitment:</strong> AgeWise does <strong>not</strong> collect, transmit, or store any personal data on external servers. All calculations happen locally on your device.
+      <strong>In short:</strong> Your names, birth dates, saved birthdays and settings stay on your device. The App shows one banner ad served by Google AdMob, and it sends usage events and crash reports to Google Firebase. These never include your names or birth dates.
     </div>
   </section>
 
-  <!-- 2. Information We Do Not Collect -->
+  <!-- 2. Information Collected -->
   <section>
-    <h2><span class="icon">🚫</span> 2. Information We Do Not Collect</h2>
-    <p>AgeWise does <strong>not</strong> collect or transmit the following:</p>
+    <h2><span class="icon">📊</span> 2. Information Collected by Third-Party Services</h2>
+    <p>RJ App Studio does not ask you to create an account or sign up, and we do not receive your names or birth dates. The App uses these Google services:</p>
     <ul>
-      <li>Your name, email address, or any account information</li>
-      <li>Your date of birth or any dates you enter into the App</li>
-      <li>Your precise location or IP address</li>
-      <li>Device identifiers, advertising IDs, or phone numbers</li>
-      <li>Photos, contacts, or any files from your device</li>
-      <li>Any form of behavioral tracking or analytics data</li>
+      <li><strong>Google AdMob (ads):</strong> may collect and use your device's advertising ID, IP address (which can show approximate location), device information and ad interactions</li>
+      <li><strong>Firebase Analytics (usage events):</strong> for example, which tool was opened</li>
+      <li><strong>Firebase Crashlytics (crash reports):</strong> reports sent when the App crashes</li>
     </ul>
+    <p>Details are in section 5.</p>
   </section>
 
   <!-- 3. Data Stored Locally -->
   <section>
     <h2><span class="icon">📱</span> 3. Data Stored Locally on Your Device <span class="badge">On-Device Only</span></h2>
-    <p>If you use the <strong>Saved Birthdays</strong> feature, the names and dates of birth you enter are stored <strong>exclusively on your device</strong> using local device storage (such as AsyncStorage or SQLite).</p>
+    <p>The names, birth dates, saved birthdays and settings you enter are stored <strong>only on your device</strong> using local device storage.</p>
     <ul>
-      <li>This data never leaves your device</li>
-      <li>It is not synced to any cloud service by the App</li>
-      <li>You can delete all locally saved data at any time by uninstalling the App or clearing its data in your device settings</li>
+      <li>This data is never sent to RJ App Studio or anyone else</li>
+      <li>There is no account or sign-up</li>
+      <li>This data is removed when you uninstall the App or clear its data in your device settings</li>
     </ul>
     <div class="highlight-box">
       <strong>Note:</strong> If your device has a system backup enabled (e.g. Google Backup), your device's own backup service may include this App's local data. This is governed by your device manufacturer's and Google's privacy policies, not ours.
@@ -218,41 +216,30 @@
     <h2><span class="icon">🔐</span> 4. App Permissions</h2>
     <p>AgeWise requests only the minimum permissions necessary to function:</p>
     <ul>
-      <li><strong>No camera permission</strong> – the App does not access your camera</li>
-      <li><strong>No contacts permission</strong> – birthdays are entered manually by you</li>
-      <li><strong>No location permission</strong> – the App does not use your location</li>
-      <li><strong>Notifications (optional)</strong> – only if you choose to enable birthday reminders. Notifications are generated locally and do not involve external servers</li>
+      <li><strong>Notifications (optional)</strong> – only if you turn on birthday reminders. Reminders are created on your device</li>
+      <li><strong>Internet access</strong> – used for ads, analytics and crash reports. The calculators themselves work without internet</li>
     </ul>
+    <p>The App does not ask for camera, contacts or location permission.</p>
   </section>
 
-  <!-- 5. No Third-Party Services -->
+  <!-- 5. Third-Party Services -->
   <section>
     <h2><span class="icon">🔗</span> 5. Third-Party Services</h2>
-    <p>AgeWise does <strong>not</strong> integrate any third-party services that collect personal data, including:</p>
-    <ul>
-      <li>No advertising SDKs (e.g. AdMob, Meta Audience Network)</li>
-      <li>No analytics platforms (e.g. Firebase Analytics, Mixpanel)</li>
-      <li>No crash reporting tools that transmit personal data</li>
-      <li>No social media login or third-party authentication</li>
-    </ul>
-    <p>The App is completely ad-free and does not track user behavior for any commercial purpose.</p>
+    <p><strong>Ads (Google AdMob).</strong> The App shows one banner ad served by Google AdMob. AdMob may collect and use your device's advertising ID, IP address (which can show approximate location), device information and ad interactions to show and measure ads and to prevent fraud. Where the law requires it (for example in the EEA, the UK and some US states), the App asks for your consent first, and you can change your choice in the App. You can reset or delete your advertising ID in your Android settings. Learn more: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from sites or apps that use its services</a>.</p>
+    <p><strong>Analytics and crash reports (Google Firebase).</strong> The App sends usage events (for example, which tool was opened) and crash reports to Google Firebase (Firebase Analytics and Firebase Crashlytics). We use them to fix bugs and improve the App. They never include your names or birth dates. Learn more: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Privacy and Security in Firebase</a>.</p>
+    <p>The App has no social media login.</p>
   </section>
 
   <!-- 6. Children's Privacy -->
   <section>
     <h2><span class="icon">👶</span> 6. Children's Privacy</h2>
-    <p>AgeWise is suitable for users of all ages, including children. Because the App does not collect any personal data, it complies with applicable children's privacy regulations, including:</p>
-    <ul>
-      <li><strong>COPPA</strong> (Children's Online Privacy Protection Act, USA)</li>
-      <li><strong>GDPR-K</strong> (Children's data provisions under GDPR, EU)</li>
-    </ul>
-    <p>We do not knowingly collect personal information from children or any other users. If you believe any information has been unintentionally collected, please contact us immediately.</p>
+    <p>AgeWise is for a general audience. It is not directed at children under 13. If you believe a child under 13 has given us information, please contact us and we will help.</p>
   </section>
 
   <!-- 7. Data Security -->
   <section>
     <h2><span class="icon">🔒</span> 7. Data Security</h2>
-    <p>Since all data remains on your device and no data is transmitted to external servers, the primary security of your information depends on the security of your device (e.g. screen lock, encryption).</p>
+    <p>The data you enter stays on your device, so its security depends on the security of your device (e.g. screen lock, encryption).</p>
     <p>We recommend keeping your device's operating system up to date and using device-level security features to protect your locally stored information.</p>
   </section>
 
@@ -260,21 +247,21 @@
   <section id="data-deletion">
     <h2><span class="icon">🗂️</span> 8. Data Retention &amp; Deletion</h2>
     <div class="highlight-box">
-      <strong>No server-side data:</strong> AgeWise does not collect or store any data on external servers. There is no account to delete and no server-side data that can be requested for removal. All data removal is handled entirely on your device.
+      <strong>No account:</strong> AgeWise has no account to delete. The names and birth dates you enter exist only on your device, and you remove them on your device.
     </div>
-    <p>All data stored by AgeWise exists only on your device and is retained until you choose to delete it. You can remove all App data by:</p>
+    <p>All data you enter in AgeWise is kept until you choose to delete it. You can remove it by:</p>
     <ul>
       <li>Uninstalling the App from your device</li>
       <li>Going to <strong>Settings → Apps → AgeWise → Clear Data</strong> on your Android device</li>
       <li>Using the in-app delete option for individual saved profiles (if available)</li>
     </ul>
-    <p>If you wish to submit a formal data deletion request or have any concerns, please contact us at <a href="mailto:officialrjappstudio@gmail.com">officialrjappstudio@gmail.com</a> and we will respond within 5 business days.</p>
+    <p>You can reset or delete your advertising ID in your Android settings. If you have questions or wish to submit a data request, please contact us at <a href="mailto:officialrjappstudio@gmail.com">officialrjappstudio@gmail.com</a> and we will respond within 5 business days.</p>
   </section>
 
   <!-- 9. Your Rights -->
   <section>
     <h2><span class="icon">⚖️</span> 9. Your Rights</h2>
-    <p>Depending on your region, you may have rights regarding personal data under laws such as the GDPR (EU) or CCPA (California). Since AgeWise does not collect or process any personal data on external servers, these rights are automatically satisfied — there is no personal data held by us to access, correct, or delete.</p>
+    <p>Depending on your region, you may have rights regarding personal data under laws such as the GDPR (EU) or CCPA (California). RJ App Studio does not receive your names or birth dates. Ad, analytics and crash data is handled by Google under the policies linked in section 5, and you can change your ad consent choice in the App.</p>
     <p>If you have any questions or concerns about your privacy, you are welcome to contact us at any time using the details below.</p>
   </section>
 
@@ -294,7 +281,12 @@
     <h2>📬 Contact Us</h2>
     <p>If you have any questions, concerns, or requests regarding this Privacy Policy or the App, please contact us:</p>
     <p><strong>Developer:</strong> RJ App Studio</p>
-    <p><strong>Email:</strong> <a href="mailto:officialrjappstudio@gmail.com">officialrjappstudio@gmail.com</a></p></p>
+    <p><strong>Email:</strong> <a href="mailto:officialrjappstudio@gmail.com">officialrjappstudio@gmail.com</a></p>
     <p><strong>Website:</strong> <a href="https://rjappstudio.in/" target="_blank" rel="noopener">https://rjappstudio.in/</a></p>
     <p style="margin-top:14px; font-size:14px; opacity:0.8;">We aim to respond to all inquiries within 5 business days.</p>
-  </di
+  </div>
+
+</div>
+
+</body>
+</html>
